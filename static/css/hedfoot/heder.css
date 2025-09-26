@@ -181,16 +181,12 @@ header section a button:hover {
 }
 
 .seraich label svg {
-  width: 37px;
-  height: 37px;
+  width: 28px;
+  height: 28px;
   cursor: pointer;
   color: #fff;
 }
-.messag svg {
-  width: 35px;
-  height: 35px;
-  color: #fff;
-}
+
 @media (max-width: 1285px) {
   header {
     padding: 18px 10px 18px 10px;
