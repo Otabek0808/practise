@@ -31,12 +31,6 @@
             </li>
           </ul>
         </nav>
-        <button class="button_menu" id="draggable">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1665/1665778.png"
-            alt="no photo"
-          />
-        </button>
         <div class="seraich">
           <input type="text" placeholder="Qidiruv..." id="seraich" />
           <label for="seraich">
@@ -56,7 +50,32 @@
         </div>
       </section>
     </header>
-    <main>{% block content %} {% endblock content %}</main>
-    <footer></footer>
+    <!-- <main>{% block content %} {% endblock content %}</main> -->
+    <footer>
+      <section>
+        <div class="logo_qator">
+          <a href=""
+            ><img
+              src="../static/img/logo/a_logo_design_that_image_.jpg"
+              alt="no photo"
+          /></a>
+          <p>Telfon raqam:</p>
+        </div>
+        <ul>
+          <li>
+            <a href="{% url 'home' %}" class="belgi_local">Bosh sahifa</a>
+          </li>
+          <li><a href="">Antivruslar</a></li>
+          <li><a href="">Dasturlar</a></li>
+          <li><a href="">OS</a></li>
+          <li>
+            <a href="">Windows</a>
+          </li>
+        </ul>
+        <div class="muallif_ququqi">
+          <p>© 2025, Qarshi</p>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>
