@@ -2,7 +2,6 @@ header {
   width: 100%;
   height: auto;
   background: #141c28;
-
   backdrop-filter: blur(200px);
   background-color: rgba(14, 13, 14, 0.1);
   box-sizing: 0 200px 200px 0 red;
@@ -31,7 +30,7 @@ header section nav {
 .logo img {
   width: 80px;
   height: 80px;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 header section nav ul {
