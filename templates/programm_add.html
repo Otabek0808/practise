@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Yangi dastur</h1>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {% comment %} {{ form.media }} {% endcomment %}
+        {{ form.content }}
+        {{ form }}
+        <button class="btn btn-success ml-2" type="submit">Joylash</button>
+    </form>
+{% endblock %}
