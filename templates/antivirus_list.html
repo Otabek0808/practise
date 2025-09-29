@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for antivirus in object_list %}
-        {% if antivirus %}
-            <h2>{{ antivirus.name }}</h2>
-        {% else %}
-            <h2>Topilmadi</h2>
-        {% endif %}
-    {% endfor %}
+    <h2>Antiviruslar ro'yxati</h2>
+{#    {% for antivirus in programms %}#}
+{#        {% if antivirus %}#}
+{#            <h2>{{ antivirus.name }}</h2>#}
+{#        {% else %}#}
+{#            <h2>Topilmadi</h2>#}
+{#        {% endif %}#}
+{#    {% endfor %}#}
+    <ul>
+  {% for program in object_list %}
+    <li>{{ program.name }} ({{ program.get_category_display }})</li>
+  {% empty %}
+    <li>Hech narsa topilmadi</li>
+  {% endfor %}
+</ul>
 {% endblock content %}
