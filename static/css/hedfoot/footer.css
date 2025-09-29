@@ -1,16 +1,14 @@
 footer {
   width: 100%;
-  height: auto;
-  backdrop-filter: blur;
-  background-color: rgba(9, 3, 45, 0.1);
-  box-sizing: 0 200px 200px 0 red;
+  height: 500px;
+  background-color: rgb(3, 31, 46);
 }
 footer section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  max-width: 1380px;
+  margin: 120px auto;
+  max-width: 1600px;
   width: auto;
   height: auto;
   padding: 20px 15px;
@@ -21,9 +19,9 @@ footer section .logo_qator {
   gap: 10px;
 }
 footer section .logo_qator img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  border-radius: 20%;
 }
 footer section .logo_qator p {
   color: #fff;

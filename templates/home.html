@@ -1,18 +1,38 @@
-{% extends 'base.html' %}
-{% block content %}
+<!-- {% extends 'base.html' %} {% block content %} -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/css/style.css" />
-    <title>Document</title>
+    <title>home</title>
   </head>
   <body>
     <main>
-        <a class="btn btn-success" href="{% url 'antivirus-list' %}" style="color: whitesmoke">antivirus list</a>
-        <a class="btn btn-success" href="{% url 'add-program' %}" style="color: whitesmoke">programm add</a>
+      <!-- <a href="{% url 'antivirus-list' %}" style="color: whitesmoke">antivirus list</a>
+        <a href="{% url 'add-program' %}" style="color: whitesmoke">programm add</a> -->
+      <section class="reclom">
+        <div class="welcom birlik">
+          <div class="writing">
+            <h3>Saytimizga xush kelibsiz</h3>
+          </div>
+        </div>
+        <div class="info birlik">
+          <div class="writing">
+            <h3>Operatsion tizimlar</h3>
+          </div>
+        </div>
+        <div class="info_dele birlik">
+          <div class="writing">
+            <h3>Samarali antiviruslar</h3>
+          </div>
+        </div>
+      </section>
+      <section class="antivrus"></section>
+      <section class="programm"></section>
+      <section class="os"></section>
+      <section class="windows"></section>
     </main>
   </body>
 </html>
-{% endblock content %}
+<!-- {% endblock content %} -->
