@@ -1,8 +1,10 @@
 from django.urls import include, path
 
-from app1.views import AntivirusListView, ProgramAddView
+from app1.views import AntivirusListView, OSListView, MobileListView, CompListView
 
 urlpatterns = [
     path('antivirus/', AntivirusListView.as_view(), name='antivirus-list'),
-    # path('add/', ProgramAddView.as_view(), name='add-program'),
+    path('os/', OSListView.as_view(), name='os-list'),
+    path('kompyuter-dastur', CompListView.as_view(), name='comp-list'),
+    path('mobile-dastur', MobileListView.as_view(), name='mobile-list'),
 ]

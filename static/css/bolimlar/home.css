@@ -12,7 +12,7 @@
   border-radius: 15px;
 }
 .reclom .welcom {
-  background: url(../../img/decaratsion_img/a_futuristic_repre_image_.jpg);
+  background: url("static/img/decaratsion_img/a_futuristic_repre_image_.jpg");
 }
 .reclom .writing {
   height: auto;
