@@ -4,6 +4,11 @@ from django.urls import reverse_lazy
 from app1.models import Programms
 
 # Create your views here.
+
+class HomePageView(ListView):
+    model = Programms
+    template_name = 'home.html'
+
 class ProgramAddView(CreateView):
     model = Programms
     template_name = 'programm_add.html'
