@@ -1,11 +1,11 @@
-<!-- {% load static %} -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
     <title>base</title>
   </head>
   <body>
@@ -14,7 +14,7 @@
         <nav>
           <a href="{% url 'home' %}" class="logo">
             <img
-              src="../static/img/logo/create_a_logo_with_image_.jpg"
+              src="{% static 'img/logo/create_a_logo_with_image_.jpg'%}"
               alt="no photo"
             />
             <p>
@@ -26,7 +26,7 @@
             <li>
               <a href="{% url 'home' %}" class="belgi_local">Bosh sahifa</a>
             </li>
-            <li><a href="">Antivruslar</a></li>
+            <li><a href="{% url 'antivirus-list' %}">Antivruslar</a></li>
             <li><a href="">Dasturlar</a></li>
             <li><a href="">OS</a></li>
             <li>
@@ -34,8 +34,8 @@
             </li>
           </ul>
         </nav>
-        <div class="seraich">
-          <input type="text" placeholder="Qidiruv..." id="seraich" />
+        <form method="get" class="seraich">
+          <input name="q" type="text" placeholder="Qidiruv..." id="seraich" />
           <label for="seraich">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,16 +50,16 @@
               />
             </svg>
           </label>
-        </div>
+        </form>
       </section>
     </header>
-    <!-- <main>{% block content %} {% endblock content %}</main> -->
+    <main>{% block content %} {% endblock content %}</main>
     <footer>
       <section>
         <div class="logo_qator">
           <a href=""
             ><img
-              src="../static/img/logo/create_a_logo_with_image_.jpg"
+              src="{% static 'img/logo/create_a_logo_with_image_.jpg'%}"
               alt="no photo"
           /></a>
         </div>
