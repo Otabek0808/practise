@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for comp in object_list %}
+        {% if comp %}
+            <h2>{{ comp.name }}</h2>
+        {% else %}
+            <h2>Topilmadi</h2>
+        {% endif %}
+    {% endfor %}
+{% endblock content %}
