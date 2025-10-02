@@ -35,6 +35,13 @@
       <section class="os"></section>
       <section class="windows"></section>
     </main>
+  <div>
+      <ul>
+          {% for program in programs %}
+            <li>{{ program.name }}</li>
+          {% endfor %}
+      </ul>
+  </div>
   </body>
 </html>
 {% endblock content %}
