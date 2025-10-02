@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from django.urls import reverse_lazy
 from app1.models import Programms
 
@@ -76,3 +76,7 @@ class CompListView(ListView):
         if query:
             qs = qs.filter(name__icontains=query)
         return qs
+
+class AntivirusDetailView(DetailView):
+    model = Programms
+    template_name = 'antivirus_detail.html'
