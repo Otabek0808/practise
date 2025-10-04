@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-{#    {% for antivirus in object_list %}#}
-{#        {% if antivirus %}#}
-{#            <h2>{{ antivirus.name }}</h2>#}
-{#        {% else %}#}
-{#            <h2>Topilmadi</h2>#}
-{#        {% endif %}#}
-{#    {% endfor %}#}
-    <div class="card-group" style="display: flex; flex-wrap: wrap; justify-content: center;">
-            {% for antivirus in object_list %}
-                    <div class="card" style="width: 28rem; margin: 2rem;">
-                        <div class="card-header">
-                            <span class="font-weight-bold">
-                                <a href="{% url 'antivirus-detail' antivirus.pk %}">
-                                    <h2>{{ antivirus.name }}</h2>
-                                </a>
-                            </span>
-                        </div>
-                        <div class="card-body">
-                            {{ antivirus.summary }}...
-                            <a href="{% url 'antivirus-detail' antivirus.pk %}">batafsil</a>
-                        </div>
-                    </div>
-            {% endfor %}
-        </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+          {% for antivirus in object_list %}
+  <div class="cd" >
+    <div class="der">
+      <span class="d">
+        <a href="{% url 'antivirus-detail' antivirus.pk %}">
+          <h2>{{ antivirus.name }}</h2>
+        </a>
+      </span>
+    </div>
+    <div class="y">
+      {{ antivirus.summary }}...
+      <a href="{% url 'antivirus-detail' antivirus.pk %}">batafsil</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+    </body>
+    </html>
+
 {% endblock content %}

@@ -1,0 +1,16 @@
+.cd {
+  display: flex;
+  background: rgb(14, 171, 161);
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  height: auto;
+}
+.karta_box {
+  display: flex;
+  width: 1000px;
+  height: 500px;
+}
+.info {
+  background: blue;
+}
