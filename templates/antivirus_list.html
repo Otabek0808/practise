@@ -1,30 +1,31 @@
-{% extends 'base.html' %}
-{% block content %}
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-          {% for antivirus in object_list %}
-  <div class="cd" >
-    <div class="der">
-      <span class="d">
-        <a href="{% url 'antivirus-detail' antivirus.pk %}">
-          <h2>{{ antivirus.name }}</h2>
-        </a>
-      </span>
-    </div>
-    <div class="y">
-      {{ antivirus.summary }}...
-      <a href="{% url 'antivirus-detail' antivirus.pk %}">batafsil</a>
-    </div>
-  </div>
-  {% endfor %}
-</div>
-    </body>
-    </html>
+{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% for antivirus in object_list %}
+    <section class="antvir_contayner">
+      <div class="antvir_name">
+        <span>
+          <a href="{% url 'antivirus-detail' antivirus.pk %}">
+            <h2>{{ antivirus.name }}</h2>
+          </a>
+        </span>
+      </div>
+      <div class="anvir_summ">
+        <span>
+          {{ antivirus.summary }}...
+          <a href="{% url 'antivirus-detail' antivirus.pk %}">batafsil</a>
+        </span>
+      </div>
+    </section>
+    {% endfor %}
+  </body>
+</html>
 
 {% endblock content %}

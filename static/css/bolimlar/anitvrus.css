@@ -1,16 +1,9 @@
-.cd {
+.antvir_contayner {
   display: flex;
-  background: rgb(14, 171, 161);
   width: 100%;
-  max-width: 200px;
-  height: 200px;
-  height: auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.karta_box {
-  display: flex;
-  width: 1000px;
-  height: 500px;
-}
-.info {
-  background: blue;
+.antvir_contayner span {
+  color: rgb(15, 67, 172);
 }
