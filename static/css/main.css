@@ -16,13 +16,15 @@ body {
   background: linear-gradient(
     to bottom,
     rgb(3, 31, 46),
-    rgb(3, 31, 46),
+    rgb(13, 86, 124),
     rgb(3, 31, 46)
   );
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 body a {
   text-decoration: none;
@@ -41,4 +43,19 @@ body ul li {
 }
 .content {
   background: linear-gradient(to bottom, #f0f0f0, #ccc);
+}
+.circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.7;
+  pointer-events: none; /* Kursor ustida bo'lsa, boshqa elementlarga ta'sir qilmasligi uchun */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Markazga joylash**
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5); /* Nur jilolari */
+  transition: background-color 0.3s, box-shadow 0.3s; /* O'zgarishlar uchun */
 }

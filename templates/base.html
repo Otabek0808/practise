@@ -33,22 +33,32 @@
               <a href="{% url 'home' %}" class="belgi_local">Bosh sahifa</a>
             </li>
             <li><a href="{% url 'antivirus-list' %}">Antivruslar</a></li>
-<<<<<<< HEAD
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Dasturlar
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{% url 'mobile-list' %}">Mobile dastur</a></li>
-                <li><a class="dropdown-item" href="{% url 'comp-list' %}">Kompyuter dastur</a></li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'mobile-list' %}"
+                    >Mobile dastur</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'comp-list' %}"
+                    >Kompyuter dastur</a
+                  >
+                </li>
               </ul>
             </li>
-=======
-            <li><a href="">Dasturlar</a></li>
->>>>>>> 78d03110a1792e4e20e004960abdf31426e576ca
             <li><a href="{% url 'os-list' %}">OS</a></li>
             <li><a href="{% url 'os-list' %}?q=windows">Windows</a></li>
-
           </ul>
         </nav>
         <form method="get" class="seraich">
@@ -68,6 +78,7 @@
             </svg>
           </label>
         </form>
+        <div class="circle" id="circle"></div>
       </section>
     </header>
     <main>{% block content %} {% endblock content %}</main>

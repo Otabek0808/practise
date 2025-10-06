@@ -5,23 +5,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/css/style.css" />
-    <title>Document</title>
+    <title>antivirus</title>
   </head>
   <body>
     {% for antivirus in object_list %}
     <section class="antvir_contayner">
-      <div class="antvir_name">
-        <span>
-          <a href="{% url 'antivirus-detail' antivirus.pk %}">
-            <h2>{{ antivirus.name }}</h2>
-          </a>
-        </span>
-      </div>
-      <div class="anvir_summ">
-        <span>
-          {{ antivirus.summary }}...
-          <a href="{% url 'antivirus-detail' antivirus.pk %}">batafsil</a>
-        </span>
+      <div class="section_ant">
+        <div class="anvir_box">
+          <div class="antvir_name">
+            <span>
+              <a href="{% url 'antivirus-detail' antivirus.pk %}">
+                <h2>{{ antivirus.name }}</h2>
+              </a>
+            </span>
+          </div>
+          <div class="anvir_summ">
+            <span>
+              {{ antivirus.summary }}...
+              <a href="{% url 'antivirus-detail' antivirus.pk %}">batafsil</a>
+            </span>
+          </div>
+        </div>
       </div>
     </section>
     {% endfor %}

@@ -1,9 +1,27 @@
 .antvir_contayner {
-  display: flex;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
+  gap: 1000px;
+}
+.section_ant {
+  width: 1200px;
+}
+.anti_box {
+  width: 300px;
+  height: 120px;
+  background: rgb(191, 34, 34);
+  border-radius: 20px;
+}
+.antvir_name {
+  background: red;
 }
 .antvir_contayner span {
-  color: rgb(15, 67, 172);
+  color: rgb(16, 111, 174);
+}
+.antvir_name span h2 {
+  color: rgb(255, 0, 0);
+}
+
+.anvir_summ span h2 {
+  color: azure;
 }
