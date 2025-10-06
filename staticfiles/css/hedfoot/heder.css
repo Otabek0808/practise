@@ -1,0 +1,193 @@
+header {
+  width: 100%;
+  height: auto;
+  backdrop-filter: blur(200px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0 red;
+}
+header section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  width: auto;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+header section nav {
+  width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 240px;
+  height: 80px;
+  border-radius: 50px;
+}
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+}
+.logo p {
+  font-size: 22px;
+  font-family: "Sprintura Demo", sans-serif;
+  color: #2f0841;
+}
+header section nav ul {
+  display: flex;
+  gap: 30px;
+  width: 750px;
+  margin-top: 10px;
+}
+header section nav ul li {
+  list-style: none;
+}
+header section nav ul li a {
+  display: inline-block; /* Inline-block qilish */
+  position: relative;
+  font-size: 16px;
+  color: #f7f8f8;
+}
+header section nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  width: 100%;
+  height: 3px;
+  background: rgb(245, 245, 247);
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.3s ease;
+}
+header section nav ul li a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+header section a button {
+  width: 200px;
+  height: 40px;
+  border: none;
+  background: #148d14;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  color: azure;
+  font-weight: bold;
+}
+header section a button:hover {
+  background: #fff;
+  color: #1d2a35;
+}
+.qidiruv_box {
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 30px;
+  max-width: 500px;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  background: #bac6cd;
+  margin-right: 10px;
+  height: 35px;
+}
+
+.qidiruv_box a img {
+  border-radius: 50px;
+  width: 35px; /* Lupa rasmining kengligi */
+  height: 35px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.qidiruv_box a {
+  text-decoration: none;
+}
+.qidiruv_box button {
+  font-family: "Barlow", sans-serif;
+  border: none;
+  border-radius: 60px;
+  width: 175px;
+  height: 58px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 162%;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  display: none;
+  color: #fff;
+  background: #1d2a35;
+}
+.qidiruv_box button:hover {
+  background: #b9c3c4;
+  color: #1d2a35;
+}
+.button_menu {
+  display: none;
+  position: fixed;
+  font-size: 16px;
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 3px solid #189531;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.3s ease;
+  bottom: 80px;
+  right: 24px;
+  pointer-events: auto;
+}
+.button_menu:hover {
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+.button_menu img {
+  display: none;
+}
+
+.seraich {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 400px;
+  height: 45px;
+  border-radius: 20px;
+  padding: 5px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(113, 36, 36, 0.1);
+  box-sizing: 1px 20px 20px 1px rgb(219, 8, 8);
+}
+.seraich input {
+  width: 330px;
+  height: 433;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  backdrop-filter: blur(200px);
+  background-color: rgba(11, 9, 11, 0.1);
+}
+.seraich input::placeholder {
+  font-size: 18px;
+  color: rgb(219, 236, 236);
+}
+.seraich input:focus {
+  color: #bac6cd;
+  font-size: 18px;
+}
+
+.seraich label svg {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  color: #fff;
+}
