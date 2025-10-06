@@ -1,9 +1,9 @@
 .antvir_contayner {
-  display: flex;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+    color: #189531;
 }
 .antvir_contayner span {
-  color: rgb(15, 67, 172);
+  color: rgb(149, 9, 92);
 }
