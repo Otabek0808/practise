@@ -27,8 +27,12 @@ class ProgramAddView(CreateView):
             return reverse_lazy('antivirus-list')  # urls.py dagi nomga qarab
         elif category == 'os':
             return reverse_lazy('os-list')
+        elif category == 'mobile':
+            return reverse_lazy('mobile-list')
+        elif category == 'comp':
+            return reverse_lazy('comp-list')
         else:
-            return reverse_lazy('other-list')
+            return reverse_lazy('home')
 
 
 class AntivirusListView(ListView):

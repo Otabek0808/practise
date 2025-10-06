@@ -40,11 +40,9 @@
                 <li><a class="dropdown-item" href="{% url 'comp-list' %}">Kompyuter dastur</a></li>
               </ul>
             </li>
-
             <li><a href="{% url 'os-list' %}">OS</a></li>
-            <li>
-              <a href="">Windows</a>
-            </li>
+            <li><a href="{% url 'os-list' %}?q=windows">Windows</a></li>
+
           </ul>
         </nav>
         <form method="get" class="seraich">
