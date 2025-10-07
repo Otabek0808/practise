@@ -1,6 +1,7 @@
 .antvir_contayner {
   width: 100%;
   margin: 0 auto;
+  max-width: 1200px;
   gap: 1000px;
 }
 .section_ant {
@@ -9,14 +10,13 @@
 .anti_box {
   width: 300px;
   height: 120px;
-  background: rgb(191, 34, 34);
   border-radius: 20px;
 }
 .antvir_name {
   background: red;
 }
 .antvir_contayner span {
-  color: rgb(16, 111, 174);
+  color: rgb(116, 175, 27);
 }
 .antvir_name span h2 {
   color: rgb(255, 0, 0);

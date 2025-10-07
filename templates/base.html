@@ -30,9 +30,20 @@
           </a>
           <ul>
             <li>
-              <a href="{% url 'home' %}" class="belgi_local">Bosh sahifa</a>
+              <a
+                href="{% url 'home' %}"
+                class="belgi_local"
+                aria-labelledby="navbarDropdown"
+                >Bosh sahifa</a
+              >
             </li>
-            <li><a href="{% url 'antivirus-list' %}">Antivruslar</a></li>
+            <li>
+              <a
+                href="{% url 'antivirus-list' %}"
+                aria-labelledby="navbarDropdown"
+                >Antivruslar</a
+              >
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -57,8 +68,18 @@
                 </li>
               </ul>
             </li>
-            <li><a href="{% url 'os-list' %}">OS</a></li>
-            <li><a href="{% url 'os-list' %}?q=windows">Windows</a></li>
+            <li>
+              <a href="{% url 'os-list' %}" aria-labelledby="navbarDropdown"
+                >OS</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'os-list' %}?q=windows"
+                aria-labelledby="navbarDropdown"
+                >Windows</a
+              >
+            </li>
           </ul>
         </nav>
         <form method="get" class="seraich">
@@ -78,7 +99,6 @@
             </svg>
           </label>
         </form>
-        <div class="circle" id="circle"></div>
       </section>
     </header>
     <main>{% block content %} {% endblock content %}</main>
