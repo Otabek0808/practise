@@ -68,7 +68,8 @@
   display: flex;
   justify-content: space-between;
 }
-.reclom_box {
+
+a .reclom_box {
   width: 280px;
   height: 450px;
   border-radius: 15px;
@@ -79,5 +80,8 @@
   box-sizing: 0 200px 200px 0 red;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(149, 240, 248, 0.7); /* Nur effekti */
-  transition: box-shadow 0.3s;
+  transition: 0.3s ease;
+}
+a .reclom_box:hover {
+  transform: scale(1.05);
 }

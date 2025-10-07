@@ -38,22 +38,9 @@
           </a>
           <ul>
             <li>
-              <a
-                href="{% url 'home' %}"
-                class="belgi_local"
-                aria-labelledby="navbarDropdown"
-                >Bosh sahifa</a
-              >
-            </li>
-            <li>
-              <a
-                href="{% url 'antivirus-list' %}"
-                aria-labelledby="navbarDropdown"
-                >Antivruslar</a
-              >
+              <a href="{% url 'home' %}" class="belgi_local">Bosh sahifa</a>
             </li>
             <li><a href="{% url 'antivirus-list' %}">Antivruslar</a></li>
-            <<<<<<< HEAD
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -62,10 +49,14 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                style="color: whitesmoke"
               >
                 Dasturlar
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul
+                class="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="navbarDropdown"
+              >
                 <li>
                   <a class="dropdown-item" href="{% url 'mobile-list' %}"
                     >Mobile dastur</a
@@ -78,9 +69,6 @@
                 </li>
               </ul>
             </li>
-            =======
-            <li><a href="">Dasturlar</a></li>
-            >>>>>>> 78d03110a1792e4e20e004960abdf31426e576ca
             <li><a href="{% url 'os-list' %}">OS</a></li>
             <li><a href="{% url 'os-list' %}?q=windows">Windows</a></li>
           </ul>
