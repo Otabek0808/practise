@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% load static %}
-<link rel="stylesheet" href="../static/css/style.css" />
+{% extends 'base.html' %} {% load static %} {% block content %} {#wefwefweddcw#}
+{% for antivirus in object_list}
 <section class="antvir_contayner">
   <a href="{% url 'antivirus-detail' antivirus.pk %}">
     <div class="box_baner">
@@ -20,3 +20,5 @@
     </div>
   </a>
 </section>
+<!--  -->
+{% endblock content %}
