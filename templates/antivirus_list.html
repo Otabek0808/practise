@@ -1,63 +1,22 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dasturlar</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-50 text-gray-800">
+    <div class="card-group" style="display: flex; flex-wrap: wrap; justify-content: center;">
+            {% for antivirus in object_list %}
+                    <div class="card" style="width: 28rem; margin: 2rem;">
+                        <div class="card-header">
+                            <span class="font-weight-bold">
+                                <a href="{% url 'antivirus-detail' antivirus.pk %}">
+                                    <h2>{{ antivirus.name }}</h2>
+                                </a>
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            {{ antivirus.summary }}...
+                            <a href="{% url 'antivirus-detail' antivirus.pk %}">batafsil</a>
+                        </div>
 
-  <header class="py-6 text-center">
-    <h1 class="text-2xl font-semibold text-gray-900">💾 Dasturlar</h1>
-    <p class="text-gray-500 text-sm mt-1">Eng kerakli va yangi dasturlar to‘plami</p>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-4 pb-10">
-    {% if object_list %}
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {% for p in object_list %}
-      <div class="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200">
-        <div class="flex items-center p-3 space-x-3">
-          {% if p.image %}
-          <img src="{{ p.image.url }}" alt="{{ p.name }}" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
-          {% else %}
-          <img src="{% static 'img/default.jpg' %}" alt="default" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
-          {% endif %}
-          <div class="flex-1 min-w-0">
-            <h2 class="text-base font-medium text-gray-900 truncate">{{ p.name }}</h2>
-            <p class="text-xs text-gray-500 truncate">{{ p.get_category_display }}</p>
-          </div>
+                    </div>
+            {% endfor %}
         </div>
-
-        <div class="px-3 pb-3">
-          <p class="text-sm text-gray-600 line-clamp-2">{{ p.summary }}</p>
-          {% if p.download_link %}
-          <a href="{{ p.download_link }}" target="_blank"
-             class="block text-center text-sm mt-3 bg-blue-500 text-white py-1.5 rounded-md hover:bg-blue-600 transition-colors">
-             Yuklab olish
-          </a>
-          {% else %}
-          <p class="text-xs text-gray-400 text-center mt-3 italic">Havola yo‘q</p>
-          {% endif %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% else %}
-    <p class="text-center text-gray-500 text-lg mt-10">Hozircha dasturlar mavjud emas 😔</p>
-    {% endif %}
-  </main>
-
-  <footer class="text-center text-gray-400 text-xs py-6">
-    © 2025 Dasturlar
-  </footer>
-
-</body>
-</html>
-
 {% endblock %}

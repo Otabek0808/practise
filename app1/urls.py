@@ -7,5 +7,8 @@ urlpatterns = [
     path('os/', OSListView.as_view(), name='os-list'),
     path('kompyuter-dastur', CompListView.as_view(), name='comp-list'),
     path('mobile-dastur', MobileListView.as_view(), name='mobile-list'),
-    path('<int:pk>/', AntivirusDetailView.as_view(), name='antivirus-detail'),
+    path('/antivirus/<int:pk>/', AntivirusDetailView.as_view(), name='antivirus-detail'),
+    # path('/kompyuter-dastur/<int:pk>/', CompDetailView.as_view(), name='comp-detail'),
+    # path('/mobile-dastur/<int:pk>/', MobileDetailView.as_view(), name='mobile-detail'),
+    # path('os/<int:pk>/', OsDetailView.as_view(), name='os-detail'),
 ]
