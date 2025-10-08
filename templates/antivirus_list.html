@@ -4,7 +4,7 @@
         <section class="antvir_contayner">
           <a href="{% url 'antivirus-detail' antivirus.pk %}">
             <div class="box_baner">
-              <img src="" alt="no photo" />
+              <img src="{{ antivirus.image.url }}" alt="no photo" />
               <div class="baner_info">
                 <h2>{{ antivirus.name }}</h2>
                 <div class="box_info">

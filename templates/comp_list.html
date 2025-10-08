@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h3 align="center">Kompyuter dasturlari</h3>
     {% for comp in object_list %}
-        {% if comp %}
-            <h2>{{ comp.name }}</h2>
-        {% else %}
-            <h2>Topilmadi</h2>
-        {% endif %}
+        <section class="antvir_contayner">
+          <a href="{% url 'comp-detail' comp.pk %}">
+            <div class="box_baner">
+              <img src="{{ comp.image.url }}" alt="no photo" />
+              <div class="baner_info">
+                <h2>{{ comp.name }}</h2>
+                <div class="box_info">
+                  <p class="text_info">{{ comp.summary }}...</p>
+                  <p class="no_money">Bepul</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </section>
     {% endfor %}
-{% endblock content %}
+{% endblock %}
