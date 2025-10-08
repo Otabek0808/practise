@@ -62,9 +62,6 @@
   color: rgb(237, 239, 240);
   font-size: 45px;
 }
-.section_antivrus h2:hover {
-  color: red;
-}
 .programm_reclom {
   height: auto;
   margin: 20px auto;

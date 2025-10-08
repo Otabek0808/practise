@@ -1,0 +1,40 @@
+.detall_antivir {
+  width: 100%;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+.box_tool {
+  width: 100%;
+  backdrop-filter: blur(200px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0 red;
+  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+}
+.title_icon {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.title_icon img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.title_icon h4 {
+  font-size: 32px;
+  color: azure;
+}
+.box_tool p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: aqua;
+}
+.box_tool a button {
+  width: 180px;
+  height: 35px;
+  border: 2px solid red;
+}
