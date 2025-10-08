@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+<link rel="stylesheet" href="../static/css/style.css" />
 <section class="detall_antivir">
   <div class="box_tool">
     <div class="title_icon">
@@ -7,6 +8,49 @@
     </div>
     <p>{{ object.summary | safe }}</p>
     <a href="{{ object.download_link }}"><button>Yuklash</button></a>
+  </div>
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/3/3c/IMG_logo_%282017%29.svg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDrHUx6GzpLb83V72i1TCSWDS3n74UJei7849XcDP04lUR410rp4-CT-e6qcEq8PLrC5c&usqp=CAU"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDrHUx6GzpLb83V72i1TCSWDS3n74UJei7849XcDP04lUR410rp4-CT-e6qcEq8PLrC5c&usqp=CAU"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
   <div class="skrishotlar"></div>
 </section>
