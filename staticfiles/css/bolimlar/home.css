@@ -58,12 +58,13 @@
   box-shadow: 0 0 10px rgba(149, 240, 248, 0.7); /* Nur effekti */
   transition: box-shadow 0.3s;
 }
+.paragrif {
+  display: flex;
+  justify-content: space-between;
+}
 .section_antivrus h2 {
   color: rgb(237, 239, 240);
   font-size: 45px;
-}
-.section_antivrus h2:hover {
-  color: red;
 }
 .programm_reclom {
   height: auto;

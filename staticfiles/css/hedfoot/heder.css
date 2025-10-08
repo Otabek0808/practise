@@ -124,3 +124,11 @@ header section nav ul li a:hover::after {
   cursor: pointer;
   color: #fff;
 }
+#dropdown_items {
+  width: auto;
+  backdrop-filter: blur(200px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0 red;
+  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7);
+  transition: 0.3s ease;
+}

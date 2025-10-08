@@ -41,28 +41,6 @@
   margin-top: 15px;
 }
 
-.box_tool a button {
-  width: 190px;
-  height: 35px;
-  border: none;
-  cursor: pointer;
-  margin-top: 25px;
-  border-radius: 10px;
-  transition: 0.5s ease;
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  background: rgb(12, 141, 167);
-  font-size: 18px;
-}
-.box_tool a button:hover {
-  transform: scale(1.02);
-  border: 1px solid aquamarine;
-  color: aquamarine;
-  backdrop-filter: blur(200px);
-  background-color: rgba(14, 13, 14, 0.1);
-  box-sizing: 0 200px 200px 0 red;
-  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7);
-}
 .comment_box {
   width: 100%;
   height: auto;

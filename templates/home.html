@@ -1,30 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<title>Bosh sahifa</title>
-<div
-  id="carouselExampleSlidesOnly"
-  class="carousel slide"
-  data-bs-ride="carousel"
->
-  <div class="carousel-inner">
-    <div class="carousel-item active welcom_box">
-      <div class="item">
-        <h3>Saytimizga xush kelibsiz</h3>
-      </div>
-    </div>
-    <div class="carousel-item os_box">
-      <div class="item">
-        <h3>Operatsion tizimlar</h3>
-      </div>
-    </div>
-    <div class="carousel-item anti_box">
-      <div class="item">
-        <h3>Samarali antiviruslar</h3>
-      </div>
-    </div>
-  </div>
-</div>
+
 <section class="section_antivrus">
-  <h2>Antiviruslar</h2>
+  <a href="{% url 'antivirus-list' %}"><h2>Antiviruslar</h2></a>
   <div class="programm_reclom">
     <a href="">
       <div class="reclom_box">
@@ -53,7 +30,7 @@
   </div>
 </section>
 <section class="section_antivrus">
-  <h2>Operatsion tizimlar</h2>
+  <a href="{% url 'os-list' %}"><h2>Operatsion tizimlar</h2></a>
   <div class="programm_reclom">
     <a href="">
       <div class="reclom_box">
@@ -82,7 +59,7 @@
   </div>
 </section>
 <section class="section_antivrus">
-  <h2>Kerakli dasturlar</h2>
+  <a href="{% url 'mobile-list' %}"><h2>Kerakli dasturlar</h2></a>
   <div class="programm_reclom">
     <a href="">
       <div class="reclom_box">

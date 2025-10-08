@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %} {% for antivirus in object_list %}
+<title>Antiviruslar</title>
 <section class="antvir_contayner">
   <a href="{% url 'antivirus-detail' antivirus.pk %}">
     <div class="box_baner">

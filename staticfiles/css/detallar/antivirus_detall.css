@@ -2,6 +2,12 @@
   width: 100%;
   margin: 20px auto;
   max-width: 1200px;
+  backdrop-filter: blur(200px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0 red;
+  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7);
+  padding: 25px;
+  border-radius: 10px;
 }
 .box_tool {
   width: 100%;
@@ -34,29 +40,20 @@
   color: aqua;
   margin-top: 15px;
 }
-.mb {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-.box_tool a button {
-  width: 190px;
-  height: 35px;
-  border: none;
-  cursor: pointer;
-  margin-top: 25px;
-  border-radius: 10px;
-  transition: 0.5s ease;
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  background: rgb(12, 141, 167);
-}
-.box_tool a button:hover {
-  transform: scale(1.02);
-  border: 1px solid aquamarine;
-  color: aquamarine;
+
+.comment_box {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
   backdrop-filter: blur(200px);
   background-color: rgba(14, 13, 14, 0.1);
   box-sizing: 0 200px 200px 0 red;
   box-shadow: 0 0 10px rgba(149, 240, 248, 0.7);
+  border-radius: 10px;
+  padding: 15px;
+}
+.comment_box p {
+  font-size: 16px;
+  list-style: 1.5;
+  color: rgb(255, 255, 255);
 }
