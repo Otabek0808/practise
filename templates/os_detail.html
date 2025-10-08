@@ -1,21 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 <link rel="stylesheet" href="../static/css/style.css" />
-<div class="card">
-  <div class="card-body">
-    <img
-      src="{{ object.image.url }}"
-      class="card-img-top rounded d-block shadow-lg"
-      alt="{{ object.name }}"
-      style="width: 40rem"
-    />
-    <h1 class="card-title">{{ object.name }}</h1>
-    <a
-      href="{{ object.download_link }}"
-      target="_blank"
-      class="btn btn-outline-success"
-      >yuklash</a
-    >
-    <p class="card-text">{{ object.summary | safe }}</p>
+<section class="detall_antivir">
+  <div class="box_tool">
+    <div class="title_icon">
+      <img src="{{ object.image.url }}" alt="{{ object.name }}" />
+      <h4>{{ object.name }}</h4>
+    </div>
+    <a href="{{ object.download_link }}"><button>Yuklash</button></a>
   </div>
-</div>
+  <div class="comment_box">
+    <p>{{ object.summary | safe }}</p>
+  </div>
+</section>
 {% endblock %}
