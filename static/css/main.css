@@ -6,6 +6,8 @@
 }
 html {
   scroll-snap-type: y mandatory;
+
+  overflow-y: hidden;
 }
 body {
   display: flex;

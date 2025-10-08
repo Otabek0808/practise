@@ -28,23 +28,24 @@
   border-radius: 10px;
 }
 .baner_info {
+  width: 100%;
 }
 .box_info {
-  margin-top: 10px;
   width: 100%;
+  margin-top: 10px;
 }
 .baner_info h2 {
   color: aqua;
   font-size: 22px;
 }
 
-.baner_info p {
+.baner_info .text_info {
   color: beige;
   font-size: 16px;
-  gap: 10px;
   line-height: 1.5;
 }
-.baner_info span p {
+.box_info .no_money {
   text-align: end;
-  margin-top: 15px;
+  margin-top: 25px;
+  color: azure;
 }
