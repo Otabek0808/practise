@@ -1,7 +1,9 @@
 footer {
   width: 100%;
-  height: 100px;
+  height: 300px;
   background-color: rgb(3, 31, 46);
+  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7); /* Nur effekti */
+  transition: box-shadow 0.3s;
 }
 footer section {
   display: flex;
@@ -22,6 +24,8 @@ footer section .logo_qator img {
   width: 180px;
   height: 180px;
   border-radius: 20%;
+  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7); /* Nur effekti */
+  transition: box-shadow 0.3s;
 }
 footer section .logo_qator p {
   color: #fff;
