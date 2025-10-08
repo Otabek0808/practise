@@ -1,9 +1,8 @@
-{% extends 'base.html' %} {% load static %} {% block content %} {% for antivirus
-in object_list %}
+{% extends 'base.html' %} {% block content %} {% for antivirus in object_list %}
 <section class="antvir_contayner">
   <a href="">
     <div class="box_baner">
-      <img src="{% url 'antivirus-detail' antivirus.pk %}" alt="no photo" />
+      <img src="" alt="no photo" />
       <div class="baner_info">
         <h2>{{ antivirus.name }}</h2>
         <div class="box_info">
