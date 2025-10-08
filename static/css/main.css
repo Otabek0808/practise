@@ -12,17 +12,15 @@ body {
   flex-direction: column;
   justify-content: space-between;
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
   background: linear-gradient(
     to bottom,
     rgb(3, 31, 46),
-    rgb(3, 31, 46),
+    rgb(13, 86, 124),
     rgb(3, 31, 46)
   );
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
 }
 body a {
   text-decoration: none;

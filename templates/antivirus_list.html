@@ -1,22 +1,19 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <div class="card-group" style="display: flex; flex-wrap: wrap; justify-content: center;">
-            {% for antivirus in object_list %}
-                    <div class="card" style="width: 28rem; margin: 2rem;">
-                        <div class="card-header">
-                            <span class="font-weight-bold">
-                                <a href="{% url 'antivirus-detail' antivirus.pk %}">
-                                    <h2>{{ antivirus.name }}</h2>
-                                </a>
-                            </span>
-                        </div>
-                        <div class="card-body">
-                            {{ antivirus.summary }}...
-                            <a href="{% url 'antivirus-detail' antivirus.pk %}">batafsil</a>
-                        </div>
-
-                    </div>
-            {% endfor %}
-        </div>
+    {% for antivirus in object_list %}
+        <section class="antvir_contayner">
+          <a href="{% url 'antivirus-detail' antivirus.pk %}">
+            <div class="box_baner">
+              <img src="" alt="no photo" />
+              <div class="baner_info">
+                <h2>{{ antivirus.name }}</h2>
+                <div class="box_info">
+                  <p class="text_info">{{ antivirus.summary }}...</p>
+                  <p class="no_money">Bepul</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </section>
+    {% endfor %}
 {% endblock %}
