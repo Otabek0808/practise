@@ -2,6 +2,12 @@
   width: 100%;
   margin: 20px auto;
   max-width: 1200px;
+  backdrop-filter: blur(200px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0 red;
+  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7);
+  padding: 25px;
+  border-radius: 10px;
 }
 .box_tool {
   width: 100%;
@@ -59,4 +65,19 @@
   background-color: rgba(14, 13, 14, 0.1);
   box-sizing: 0 200px 200px 0 red;
   box-shadow: 0 0 10px rgba(149, 240, 248, 0.7);
+}
+
+.slide {
+  width: 100%;
+  backdrop-filter: blur(200px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0 red;
+  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7);
+  padding: 25px;
+  border-radius: 10px;
+}
+.carousel-item img {
+  width: 1100px;
+  border-radius: 10px;
+  height: 500px;
 }
