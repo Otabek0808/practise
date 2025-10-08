@@ -84,3 +84,15 @@ class CompListView(ListView):
 class AntivirusDetailView(DetailView):
     model = Programms
     template_name = 'antivirus_detail.html'
+
+class OSDetailView(DetailView):
+    model = Programms
+    template_name = 'os_detail.html'
+
+class MobileDetailView(DetailView):
+    model = Programms
+    template_name = 'mobile_detail.html'
+
+class CompDetailView(DetailView):
+    model = Programms
+    template_name = 'comp_detail.html'
