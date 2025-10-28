@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Programms
 
-# Register your models here.
+class ProgrammAdmin(admin.ModelAdmin):
+    list_display = ('name', 'category', 'download_link')
+
+admin.site.register(Programms, ProgrammAdmin)

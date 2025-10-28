@@ -19,13 +19,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import TemplateView
-from app1.views import ProgramAddView, HomePageView
+from app1.views import ProgramAddView, HomePageView, ProgrammDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view(), name='home'),
     path('programms/', include('app1.urls')),
-    path('add/', ProgramAddView.as_view(), name='add-program'),
+    path('admin-panel/', ProgrammDeleteView.as_view(), name='delete'),
     path('tinymce/', include('tinymce.urls')),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:

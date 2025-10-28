@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
 from django.urls import reverse_lazy
 from app1.models import Programms
 
@@ -96,3 +96,8 @@ class MobileDetailView(DetailView):
 class CompDetailView(DetailView):
     model = Programms
     template_name = 'comp_detail.html'
+
+class ProgrammDeleteView(DeleteView):
+    model = Programms
+    template_name = 'programms_delete.html'
+    reverse_lazy('home')
