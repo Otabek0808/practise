@@ -80,8 +80,9 @@
           </ul>
         </nav>
         <form method="get" class="seraich">
-          <input name="q" type="text" placeholder="Qidiruv..." id="seraich" />
-          <label for="seraich">
+            <input type="text" name="q" placeholder="Qidiruv..." value="{{ request.GET.q }}">
+            <label for="seraich">
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

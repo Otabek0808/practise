@@ -10,12 +10,26 @@ class HomePageView(ListView):
     template_name = 'home.html'
     context_object_name = 'programs'
 
+    # def get_queryset(self):
+    #     query = self.request.GET.get('q', '').strip()
+    #     if query:
+    #         return Programms.objects.filter(name__icontains=query)
+    #     else:
+    #         return Programms.objects.none()  # hech nima chiqmasin
+    #
+class HomePageView(ListView):
+    model = Programms
+    template_name = 'home.html'
+    context_object_name = 'programs'
+
     def get_queryset(self):
         query = self.request.GET.get('q', '').strip()
         if query:
             return Programms.objects.filter(name__icontains=query)
         else:
-            return Programms.objects.none()  # hech nima chiqmasin
+            return Programms.objects.none()  # qidiruv bo‘lmasa hech narsa chiqmasin
+
+
 class ProgramAddView(CreateView):
     model = Programms
     template_name = 'programm_add.html'
