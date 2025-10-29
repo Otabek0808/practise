@@ -1,102 +1,83 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-    <div class = 'container'>
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
         {% if programs %}
-          <ul>
-            {% for p in programs %}
-              <a href="{% url 'antivirus-list' %}">{{ p.name }}</a>
-            {% endfor %}
-          </ul>
+            <ul>
+                {% for p in programs %}
+                    <a href="{% url 'antivirus-list' %}">{{ p.name }}</a>
+                {% endfor %}
+            </ul>
         {% elif request.GET.q %}
-          <p style="color: whitesmoke">Hech narsa topilmadi 😕</p>
+            <p style="color: whitesmoke">{% trans "Hech narsa topilmadi 😕" %}</p>
         {% else %}
-          <!-- Hech nima chiqmasin (bosh sahifa holatida) -->
+            <!-- Hech nima chiqmasin (bosh sahifa holatida) -->
         {% endif %}
     </div>
+
 <section class="section_antivrus">
-  <a href="{% url 'antivirus-list' %}"><h2>Antiviruslar</h2></a>
-  <div class="programm_reclom">
-    <a href="">
-      <div class="reclom_box">
-        <img src="{% static '' %}" alt="no phot" />
-        <h4>antivirus</h4>
-      </div>
+    <a href="{% url 'antivirus-list' %}">
+        <h2>{% trans "Antiviruslar" %}</h2>
     </a>
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>antivirus</h4>
-      </div>
-    </a>
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>antivirus</h4>
-      </div>
-    </a>
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>antivirus</h4>
-      </div>
-    </a>
-  </div>
+    <div class="programm_reclom">
+        <a href="">
+            <div class="reclom_box">
+                <img src="{% static '' %}" alt="{% trans 'rasm topilmadi' %}" />
+                <h4>{% trans "antivirus" %}</h4>
+            </div>
+        </a>
+        <a href="">
+            <div class="reclom_box">
+                <img src="" alt="{% trans 'rasm topilmadi' %}" />
+                <h4>{% trans "antivirus" %}</h4>
+            </div>
+        </a>
+        <a href="">
+            <div class="reclom_box">
+                <img src="" alt="{% trans 'rasm topilmadi' %}" />
+                <h4>{% trans "antivirus" %}</h4>
+            </div>
+        </a>
+        <a href="">
+            <div class="reclom_box">
+                <img src="" alt="{% trans 'rasm topilmadi' %}" />
+                <h4>{% trans "antivirus" %}</h4>
+            </div>
+        </a>
+    </div>
 </section>
+
 <section class="section_antivrus">
-  <a href="{% url 'os-list' %}"><h2>Operatsion tizimlar</h2></a>
-  <div class="programm_reclom">
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>linux</h4>
-      </div>
+    <a href="{% url 'os-list' %}">
+        <h2>{% trans "Operatsion tizimlar" %}</h2>
     </a>
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>linux</h4>
-      </div>
-    </a>
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>linux</h4>
-      </div>
-    </a>
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>linux</h4>
-      </div>
-    </a>
-  </div>
+    <div class="programm_reclom">
+        {% for i in "1234" %}
+        <a href="">
+            <div class="reclom_box">
+                <img src="" alt="{% trans 'rasm topilmadi' %}" />
+                <h4>{% trans "linux" %}</h4>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 </section>
+
 <section class="section_antivrus">
-  <a href="{% url 'mobile-list' %}"><h2>Kerakli dasturlar</h2></a>
-  <div class="programm_reclom">
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>linux</h4>
-      </div>
+    <a href="{% url 'mobile-list' %}">
+        <h2>{% trans "Kerakli dasturlar" %}</h2>
     </a>
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>linux</h4>
-      </div>
-    </a>
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>linux</h4>
-      </div>
-    </a>
-    <a href="">
-      <div class="reclom_box">
-        <img src="" alt="no photo" />
-        <h4>linux</h4>
-      </div>
-    </a>
-  </div>
+    <div class="programm_reclom">
+        {% for i in "1234" %}
+        <a href="">
+            <div class="reclom_box">
+                <img src="" alt="{% trans 'rasm topilmadi' %}" />
+                <h4>{% trans "linux" %}</h4>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 </section>
 {% endblock content %}

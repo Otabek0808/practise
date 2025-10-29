@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2025-10-29 21:41+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,58 +20,62 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\config\settings.py:115
+# Languages in settings.py
 msgid "Uzbek"
 msgstr "Узбекский"
 
-#: .\config\settings.py:116
 msgid "Russian"
 msgstr "Русский"
 
-#: .\config\settings.py:117
 msgid "English"
 msgstr "Английский"
 
-#: .\templates\base.html:9
+# Base.html menu items
 msgid "Komanda Kreativ"
 msgstr "Команда Креатив"
 
-#: .\templates\base.html:30
 msgid "Komanda"
 msgstr "Команда"
 
-#: .\templates\base.html:31
 msgid "Kreativ"
 msgstr "Креатив"
 
-#: .\templates\base.html:38
 msgid "Bosh sahifa"
 msgstr "Главная"
 
-#: .\templates\base.html:43
 msgid "Antiviruslar"
 msgstr "Антивирусы"
 
-#: .\templates\base.html:56
 msgid "Dasturlar"
 msgstr "Программы"
 
-#: .\templates\base.html:70
 msgid "Mobil dasturlar"
 msgstr "Мобильные приложения"
 
-#: .\templates\base.html:75
 msgid "Kompyuter dasturlari"
 msgstr "Компьютерные программы"
 
-#: .\templates\base.html:80
 msgid "Operatsion tizimlar"
 msgstr "Операционные системы"
 
-#: .\templates\base.html:101
 msgid "Qidiruv..."
 msgstr "Поиск..."
 
-#: .\templates\base.html:132
 msgid "Qarshi"
 msgstr "Карши"
+
+# HTML content
+msgid "Hech narsa topilmadi 😕"
+msgstr "Ничего не найдено 😕"
+
+msgid "rasm topilmadi"
+msgstr "Нет фото"
+
+msgid "antivirus"
+msgstr "Антивирус"
+
+msgid "linux"
+msgstr "Linux"
+
+msgid "Kerakli dasturlar"
+msgstr "Необходимые приложения"
