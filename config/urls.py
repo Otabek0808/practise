@@ -18,15 +18,22 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic.base import TemplateView
-from app1.views import ProgramAddView, HomePageView, ProgrammDeleteView
+from django.conf.urls.i18n import i18n_patterns
+# from django.views.generic.base import TemplateView
+from app1.views import HomePageView, ProgrammDeleteView
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),  # 🔄 tilni almashtirish uchun
+]
+
+urlpatterns += i18n_patterns (
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view(), name='home'),
     path('programms/', include('app1.urls')),
     path('admin-panel/', ProgrammDeleteView.as_view(), name='delete'),
     path('tinymce/', include('tinymce.urls')),
-    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+

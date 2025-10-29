@@ -1,17 +1,17 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<div class = 'container'>
-            {% if programs %}
-              <ul>
-                {% for p in programs %}
-                  <a href="{% url 'antivirus-list' %}">{{ p.name }}</a>
-                {% endfor %}
-              </ul>
-            {% elif request.GET.q %}
-              <p style="color: whitesmoke">Hech narsa topilmadi 😕</p>
-            {% else %}
-              <!-- Hech nima chiqmasin (bosh sahifa holatida) -->
-            {% endif %}
-</div>
+    <div class = 'container'>
+        {% if programs %}
+          <ul>
+            {% for p in programs %}
+              <a href="{% url 'antivirus-list' %}">{{ p.name }}</a>
+            {% endfor %}
+          </ul>
+        {% elif request.GET.q %}
+          <p style="color: whitesmoke">Hech narsa topilmadi 😕</p>
+        {% else %}
+          <!-- Hech nima chiqmasin (bosh sahifa holatida) -->
+        {% endif %}
+    </div>
 <section class="section_antivrus">
   <a href="{% url 'antivirus-list' %}"><h2>Antiviruslar</h2></a>
   <div class="programm_reclom">
