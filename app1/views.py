@@ -2,6 +2,11 @@ from django.shortcuts import render
 from django.views.generic import CreateView, ListView, DetailView, DeleteView
 from django.urls import reverse_lazy
 from app1.models import Programms
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.core.files.storage import default_storage
+from django.conf import settings
+
 
 # Create your views here.
 
@@ -115,3 +120,48 @@ class ProgrammDeleteView(DeleteView):
     model = Programms
     template_name = 'programms_delete.html'
     reverse_lazy('home')
+
+
+import os
+from django.utils.text import slugify
+
+
+@csrf_exempt
+def upload_image(request):
+    """Rasm yuklash uchun view"""
+    if request.method == 'POST':
+        try:
+            # Faylni olish
+            uploaded_file = request.FILES.get('file')
+            if not uploaded_file:
+                return JsonResponse({'error': 'Fayl topilmadi'}, status=400)
+
+            # Rasm formatlarini tekshirish
+            allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/jpg']
+            if uploaded_file.content_type not in allowed_types:
+                return JsonResponse({'error': 'Faqat rasm fayllari (JPG, PNG, GIF) yuklash mumkin'}, status=400)
+
+            # Fayl hajmini tekshirish (5MB)
+            if uploaded_file.size > 5 * 1024 * 1024:
+                return JsonResponse({'error': 'Rasm hajmi 5MB dan kichik bo\'lishi kerak'}, status=400)
+
+            # Fayl nomini xavfsiz qilish
+            name, ext = os.path.splitext(uploaded_file.name)
+            safe_name = f"{slugify(name)}_{os.urandom(4).hex()}{ext}"
+
+            # Faylni saqlash
+            file_path = default_storage.save(f'tinymce_uploads/{safe_name}', uploaded_file)
+
+            # To'liq URL ni olish
+            from django.urls import reverse
+            file_url = request.build_absolute_uri(default_storage.url(file_path))
+
+            # ✅ TINYMCE UCHUN TO'G'RI RESPONSE
+            return JsonResponse({
+                'location': file_url  # Tinymce aynan 'location' kalit so'zini kutadi
+            })
+
+        except Exception as e:
+            return JsonResponse({'error': f'Server xatosi: {str(e)}'}, status=500)
+
+    return JsonResponse({'error': 'Faqat POST so\'rovi qabul qilinadi'}, status=400)

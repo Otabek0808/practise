@@ -7,11 +7,23 @@
         {% if programs %}
             <ul>
                 {% for p in programs %}
-                    <a href="{% url 'antivirus-list' %}">{{ p.name }}</a>
+                    <li>
+                        {% if p.category == 'antivirus' %}
+                            <a href="{% url 'antivirus-detail' p.pk %}">{{ p.name }}</a>
+                        {% elif p.category == 'os' %}
+                            <a href="{% url 'os-detail' p.pk %}">{{ p.name }}</a>
+                        {% elif p.category == 'comp' %}
+                            <a href="{% url 'comp-detail' p.pk %}">{{ p.name }}</a>
+                        {% elif p.category == 'mobile' %}
+                            <a href="{% url 'mobile-detail' p.pk %}">{{ p.name }}</a>
+                        {% else %}
+                            <a href="#">{{ p.name }}</a>  <!-- Boshqa kategoriyalar uchun -->
+                        {% endif %}
+                    </li>
                 {% endfor %}
             </ul>
         {% elif request.GET.q %}
-            <p style="color: whitesmoke">{% trans "Hech narsa topilmadi 😕" %}</p>
+            <p>{% trans "Hech narsa topilmadi 😕" %}</p>
         {% else %}
             <!-- Hech nima chiqmasin (bosh sahifa holatida) -->
         {% endif %}

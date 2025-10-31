@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-i@=0e!2=)2qk2_twgmx%=*2u01np&&5_7_^kgd)0_8tb(o007o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['moonlight.pythonanywhere.com']
+ALLOWED_HOSTS = ['moonlight.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -144,7 +144,46 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+import os
 
+# settings.py da
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Tinymce sozlamalari
+TINYMCE_DEFAULT_CONFIG = {
+    'selector': 'textarea',
+    'plugins': 'image',
+    'toolbar': 'image',
+    'images_upload_url': '/upload-image/',
+    'images_upload_handler': """
+        function (blobInfo, progress) {
+            return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/upload-image/');
+
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        resolve(response.location);
+                    } else {
+                        reject('HTTP xatosi: ' + xhr.status);
+                    }
+                };
+
+                xhr.onerror = function() {
+                    reject('Network xatosi');
+                };
+
+                var formData = new FormData();
+                formData.append('file', blobInfo.blob(), blobInfo.filename());
+                xhr.send(formData);
+            });
+        }
+    """,
+    'paste_data_images': False,
+}
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"

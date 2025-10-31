@@ -11,6 +11,7 @@ from app1.views import (
     OSDetailView,
     MobileDetailView,
     CompDetailView,
+    upload_image,
     ProgrammDeleteView,
 )
 
@@ -23,5 +24,5 @@ urlpatterns = [
     path('kompyuter-dastur/<int:pk>/', CompDetailView.as_view(), name='comp-detail'),
     path('mobile-dastur/<int:pk>/', MobileDetailView.as_view(), name='mobile-detail'),
     path('os/<int:pk>/', OSDetailView.as_view(), name='os-detail'),
-    # path('admin-panel/', ProgrammDeleteView.as_view(), name='delete'),
+    path('upload-image/', upload_image, name='upload_image'),
 ]
