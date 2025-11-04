@@ -1,34 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% load i18n %} {% block content %}
 <link rel="stylesheet" href="../static/css/style.css" />
-<div class="container_list" id="searchList">
-  {% if programs %}
-  <ul id="ulsearchList">
-    {% for p in programs %}
-    <hr />
-    <li>
-      {% if p.category == 'antivirus' %}
-      <a href="{% url 'antivirus-detail' p.pk %}">{{ p.name }}</a>
-      {% elif p.category == 'os' %}
-      <a href="{% url 'os-detail' p.pk %}">{{ p.name }}</a>
-      {% elif p.category == 'comp' %}
-      <a href="{% url 'comp-detail' p.pk %}">{{ p.name }}</a>
-      {% elif p.category == 'mobile' %}
-      <a href="{% url 'mobile-detail' p.pk %}">{{ p.name }}</a>
-      {% else %}
-      <a href="#">{{ p.name }}</a>
-
-      <!-- Boshqa kategoriyalar uchun -->
-      {% endif %}
-    </li>
-    <hr />
-    {% endfor %}
-  </ul>
-  {% elif request.GET.q %}
-  <p>{% trans "Hech narsa topilmadi 😕" %}</p>
-  {% else %}
-  <!-- Hech nima chiqmasin (bosh sahifa holatida) -->
-  {% endif %}
-</div>
 
 <section class="section_antivrus">
   <a href="{% url 'antivirus-list' %}">

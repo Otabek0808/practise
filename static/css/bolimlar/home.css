@@ -57,21 +57,28 @@ a .reclom_box:hover {
   margin-left: 5px;
 }
 .container_list {
-  width: 100%;
-  height: 100vh;
-  backdrop-filter: blur(30px);
-  background-color: rgba(255, 255, 255, 0.1);
+  width: 350px;
+  height: 450px;
+  backdrop-filter: blur(2px);
+  background-color: rgba(218, 202, 202, 0.43);
+  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7); /* Nur effekti */
   position: absolute;
   z-index: 100;
   margin: 0 auto;
   font-size: 18px;
   overflow: hidden;
+  top: 80px;
+  right: 150px;
+  padding: 7px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 .container_list ul {
-  margin-top: 10px;
-  width: 800px;
+  width: 500px;
   height: 50vh;
   margin: 0 auto;
+  border-radius: 10px;
+  /* Nur effekti */
 }
 
 .container_list ul li a {
@@ -82,9 +89,6 @@ a .reclom_box:hover {
 .container_list ul li a:hover {
   color: aqua;
 }
-.container_list ul li {
-  padding-left: 20px;
-}
 .container_list ul hr {
   color: azure;
 }
@@ -93,6 +97,8 @@ a .reclom_box:hover {
   height: auto;
   margin: 0 auto;
   color: azure;
+  font-size: 18px;
+  margin-left: 200px;
 }
 #searchList {
 }
