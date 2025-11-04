@@ -101,20 +101,25 @@ const searchBack = document.getElementById("searchBack");
 
 // Dastlabki holatda searchList ni yashirish
 searchList.style.display = "none";
+searchBack.style.display = "none";
 
 // Inputga harf kiritilganda
 searchInput.addEventListener("input", function () {
   // Agar inputda biror narsa bo'lsa, searchList'ni ko'rsat
   if (searchInput.value.trim() !== "") {
     searchList.style.display = "block";
-  } else {
-    searchList.style.display = "none";
+    searchBack.style.display = "block";
   }
 });
 
 // Tashqariga bosilganda searchList'ni yashirish
 document.addEventListener("click", function (event) {
-  if (!searchList.contains(event.target) && event.target !== searchInput) {
-    searchList.style.display = "none"; // searchBackni ham yashirish
+  if (
+    !searchList.contains(event.target) &&
+    event.target !== searchInput &&
+    event.target !== searchBack
+  ) {
+    searchList.style.display = "none";
+    searchBack.style.display = "none"; // searchBackni ham yashirish
   }
 });
