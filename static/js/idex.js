@@ -58,3 +58,5 @@ window.addEventListener("click", function (e) {
     }, 100); // 300ms - animatsiya davomiyligi
   }
 });
+
+// qidiruv list
