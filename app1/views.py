@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, DetailView, DeleteView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, rev
 from app1.models import Programms
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
