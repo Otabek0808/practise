@@ -13,7 +13,6 @@ header {
 header section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: auto;
   width: auto;
   max-width: 1600px;
@@ -82,15 +81,15 @@ header section nav ul li a:hover::after {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  width: 400px;
   height: 45px;
   border-radius: 20px;
   padding: 5px;
-  backdrop-filter: blur(10px);
-  background-color: rgba(113, 36, 36, 0.1);
-  box-sizing: 1px 20px 20px 1px rgb(219, 8, 8);
-  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7); /* Nur effekti */
-  transition: box-shadow 0.3s;
+  width: 35px;
+  max-width: 500px;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  z-index: 1000;
+  margin-right: 20px;
 }
 .seraich input {
   width: 330px;
@@ -99,12 +98,15 @@ header section nav ul li a:hover::after {
   border: none;
   border-radius: 20px;
   backdrop-filter: blur(200px);
-  background-color: rgba(11, 9, 11, 0.1);
-
+  background-color: rgba(255, 255, 255, 0.1);
+  box-sizing: 1px 20px 20px 1px rgb(255, 255, 255);
   font-size: 18px;
   color: rgb(219, 236, 236);
-  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7); /* Nur effekti */
-  transition: box-shadow 0.3s;
+  transition: border-color 0.3s ease;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  margin-left: 10px;
+  display: none;
 }
 .seraich input::placeholder {
   font-size: 18px;
@@ -113,14 +115,81 @@ header section nav ul li a:hover::after {
 .seraich input:focus {
   color: #bac6cd;
   font-size: 18px;
+  outline: none;
 }
 .seraichinput:not(:focus) {
   font-size: 18px;
   color: rgb(219, 236, 236);
 }
-.seraich label svg {
+
+.seraich svg {
   width: 28px;
-  height: 28px;
+  height: auto;
   cursor: pointer;
   color: #fff;
+
+  box-sizing: 1px 20px 20px 1px rgb(255, 255, 255);
+}
+.seraich svg::after {
+  display: none;
+}
+/* til kritish */
+.custom-select {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+}
+
+.select-selected {
+  backdrop-filter: blur(30px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0 red;
+  box-shadow: 0 0 5px rgba(149, 240, 248, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  backdrop-filter: blur(30px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0 red;
+  box-shadow: 0 0 5px rgba(149, 240, 248, 0.7);
+  border-radius: 3px;
+  max-height: 0; /* Dastlabki holat */
+  overflow: hidden; /* Oqib chiqishining oldini olish */
+  transition: max-height 0.3s ease; /* O'zgarish animatsiyasi */
+  z-index: 99;
+}
+
+.select-items.show {
+  max-height: 200px; /* Qo'shimcha balandlikni ko'rsatish */
+}
+
+.select-items div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.select-items div:hover {
+  backdrop-filter: blur(30px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+}
+
+.select-items div {
+  padding: 10px;
+  cursor: pointer;
+}
+.select-items div:hover {
+  backdrop-filter: blur(30px);
+  background-color: rgba(14, 13, 14, 0.1);
+  box-sizing: 0 200px 200px 0;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
 }

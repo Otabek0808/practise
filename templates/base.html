@@ -1,141 +1,155 @@
-{% load static %}
-{% load i18n %}
+{% load static %} {% load i18n %}
 
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{% block title %}{% trans "Komanda Kreativ" %}{% endblock title %}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}{% trans "Komanda Kreativ" %}{% endblock title %}
+    </title>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-            crossorigin="anonymous"
-        />
-    </head>
-    <body>
-        <header>
-            <section>
-                <nav>
-                    <a href="{% url 'home' %}" class="logo">
-                        <img
-                            src="{% static 'img/logo/create_a_logo_with_image_.jpg' %}"
-                            alt="logo"
-                        />
-                        <p>
-                            {% trans "Komanda" %}<br />
-                            {% trans "Kreativ" %}
-                        </p>
-                    </a>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <section>
+        <nav>
+          <a href="{% url 'home' %}" class="logo">
+            <img
+              src="{% static 'img/logo/create_a_logo_with_image_.jpg' %}"
+              alt="logo"
+            />
+            <p>
+              {% trans "Komanda" %}<br />
+              {% trans "Kreativ" %}
+            </p>
+          </a>
 
-                    <ul>
-                        <li>
-                            <a href="{% url 'home' %}" class="belgi_local">
-                                {% trans "Bosh sahifa" %}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'antivirus-list' %}">
-                                {% trans "Antiviruslar" %}
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                id="navbarDropdown"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                                style="color: whitesmoke"
-                            >
-                                {% trans "Dasturlar" %}
-                            </a>
-                            <ul
-                                class="dropdown-menu dropdown-menu-dark"
-                                aria-labelledby="navbarDropdown"
-                                style="
-                                    width: auto;
-                                    background-color: rgba(174, 133, 19, 0.1);
-                                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-                                    transition: box-shadow 0.3s;
-                                "
-                            >
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'mobile-list' %}">
-                                        {% trans "Mobil dasturlar" %}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'comp-list' %}">
-                                        {% trans "Kompyuter dasturlari" %}
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="{% url 'os-list' %}">{% trans "Operatsion tizimlar" %}</a></li>
-                        <li><a href="{% url 'os-list' %}?q=windows">Windows</a></li>
-                    </ul>
+          <ul>
+            <li>
+              <a href="{% url 'home' %}" class="belgi_local">
+                {% trans "Bosh sahifa" %}
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'antivirus-list' %}">
+                {% trans "Antiviruslar" %}
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="color: whitesmoke"
+              >
+                {% trans "Dasturlar" %}
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="navbarDropdown"
+                style="
+                  width: auto;
+                  background-color: rgba(174, 133, 19, 0.1);
+                  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+                  transition: box-shadow 0.3s;
+                "
+              >
+                <li>
+                  <a class="dropdown-item" href="{% url 'mobile-list' %}">
+                    {% trans "Mobil dasturlar" %}
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'comp-list' %}">
+                    {% trans "Kompyuter dasturlari" %}
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="{% url 'os-list' %}"
+                >{% trans "Operatsion tizimlar" %}</a
+              >
+            </li>
+            <li><a href="{% url 'os-list' %}?q=windows">Windows</a></li>
+          </ul>
+        </nav>
 
-                    <!-- 🌐 Til tanlash formasi -->
-                    <form action="{% url 'set_language' %}" method="post" class="d-inline-block ms-3">
-                        {% csrf_token %}
-                        <select name="language" onchange="this.form.submit()" class="form-select form-select-sm">
-                            {% get_current_language as LANGUAGE_CODE %}
-                            {% get_available_languages as LANGUAGES %}
-                            {% for lang_code, lang_name in LANGUAGES %}
-                                <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
-                                    {{ lang_name }}
-                                </option>
-                            {% endfor %}
-                        </select>
-                    </form>
-                </nav>
+        <!-- 🔍 Qidiruv -->
+        <form method="get" class="seraich" id="headerBox">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-search"
+            viewBox="0 0 16 16"
+            id="lupaIcon"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+            />
+          </svg>
+          <input
+            type="text"
+            name="q"
+            placeholder="{% trans 'Qidiruv...' %}"
+            value="{{ request.GET.q }}"
+            id="searchInput"
+          />
+        </form>
+        <!-- 🌐 Til tanlash formasi -->
+        <form
+          action="{% url 'set_language' %}"
+          method="post"
+          class="d-inline-block ms-3"
+        >
+          <div class="custom-select">
+            <div id="select-selected" class="select-selected">Til</div>
+            <div id="select-items" class="select-items">
+              <div>Variant 1</div>
+              <div>Variant 2</div>
+              <div>Variant 3</div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </header>
 
-                <!-- 🔍 Qidiruv -->
-                <form method="get" class="seraich">
-                    <input type="text" name="q" placeholder="{% trans 'Qidiruv...' %}" value="{{ request.GET.q }}">
-                    <button type="submit" style="background:none;border:none;">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            class="bi bi-search"
-                            viewBox="0 0 16 16"
-                        >
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
-                            />
-                        </svg>
-                    </button>
-                </form>
-            </section>
-        </header>
+    <main>{% block content %}{% endblock content %}</main>
 
-        <main>
-            {% block content %}{% endblock content %}
-        </main>
+    <footer>
+      <section>
+        <div class="logo_qator">
+          <a href="#">
+            <img
+              src="{% static 'img/logo/create_a_logo_with_image_.jpg' %}"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <div class="muallif_ququqi">
+          <p>© 2025, {% trans "Qarshi" %}</p>
+        </div>
+      </section>
+    </footer>
 
-        <footer>
-            <section>
-                <div class="logo_qator">
-                    <a href="#">
-                        <img src="{% static 'img/logo/create_a_logo_with_image_.jpg' %}" alt="logo" />
-                    </a>
-                </div>
-                <div class="muallif_ququqi">
-                    <p>© 2025, {% trans "Qarshi" %}</p>
-                </div>
-            </section>
-        </footer>
-
-        <!-- JS -->
-        <script type="module" src="{% static 'js/welcom.js' %}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+    <!-- JS -->
+    <script src="../static/js/idex.js"></script>
+    <script type="module" src="{% static 'js/welcom.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

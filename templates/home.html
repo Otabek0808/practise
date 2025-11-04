@@ -1,95 +1,81 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load i18n %}
-
-{% block content %}
-    <div class="container">
-        {% if programs %}
-            <ul>
-                {% for p in programs %}
-                    <li>
-                        {% if p.category == 'antivirus' %}
-                            <a href="{% url 'antivirus-detail' p.pk %}">{{ p.name }}</a>
-                        {% elif p.category == 'os' %}
-                            <a href="{% url 'os-detail' p.pk %}">{{ p.name }}</a>
-                        {% elif p.category == 'comp' %}
-                            <a href="{% url 'comp-detail' p.pk %}">{{ p.name }}</a>
-                        {% elif p.category == 'mobile' %}
-                            <a href="{% url 'mobile-detail' p.pk %}">{{ p.name }}</a>
-                        {% else %}
-                            <a href="#">{{ p.name }}</a>  <!-- Boshqa kategoriyalar uchun -->
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
-        {% elif request.GET.q %}
-            <p>{% trans "Hech narsa topilmadi 😕" %}</p>
-        {% else %}
-            <!-- Hech nima chiqmasin (bosh sahifa holatida) -->
-        {% endif %}
-    </div>
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block content %}
+<link rel="stylesheet" href="../static/css/style.css" />
+<div class="container">
+  {% if programs %}
+  <ul>
+    {% for p in programs %}
+    <li>
+      {% if p.category == 'antivirus' %}
+      <a href="{% url 'antivirus-detail' p.pk %}">{{ p.name }}</a>
+      {% elif p.category == 'os' %}
+      <a href="{% url 'os-detail' p.pk %}">{{ p.name }}</a>
+      {% elif p.category == 'comp' %}
+      <a href="{% url 'comp-detail' p.pk %}">{{ p.name }}</a>
+      {% elif p.category == 'mobile' %}
+      <a href="{% url 'mobile-detail' p.pk %}">{{ p.name }}</a>
+      {% else %}
+      <a href="#">{{ p.name }}</a>
+      <!-- Boshqa kategoriyalar uchun -->
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% elif request.GET.q %}
+  <p>{% trans "Hech narsa topilmadi 😕" %}</p>
+  {% else %}
+  <!-- Hech nima chiqmasin (bosh sahifa holatida) -->
+  {% endif %}
+</div>
 
 <section class="section_antivrus">
-    <a href="{% url 'antivirus-list' %}">
-        <h2>{% trans "Antiviruslar" %}</h2>
+  <a href="{% url 'antivirus-list' %}">
+    <h2>{% trans "Antiviruslar" %}</h2>
+  </a>
+  <div class="programm_reclom">
+    {% for i in "1" %}
+    <a href="">
+      <div class="reclom_box">
+        <img
+          src="https://img.freepik.com/vetores-premium/portal-futurista-skyfi-digital-circle-science-teleport-tunel-com-raios-de-luz-e-podio-de-brilhos_114352-844.jpg"
+          alt="{% trans 'rasm topilmadi' %}"
+        />
+        <h4>{% trans "antivirus" %}</h4>
+      </div>
     </a>
-    <div class="programm_reclom">
-        <a href="">
-            <div class="reclom_box">
-                <img src="{% static '' %}" alt="{% trans 'rasm topilmadi' %}" />
-                <h4>{% trans "antivirus" %}</h4>
-            </div>
-        </a>
-        <a href="">
-            <div class="reclom_box">
-                <img src="" alt="{% trans 'rasm topilmadi' %}" />
-                <h4>{% trans "antivirus" %}</h4>
-            </div>
-        </a>
-        <a href="">
-            <div class="reclom_box">
-                <img src="" alt="{% trans 'rasm topilmadi' %}" />
-                <h4>{% trans "antivirus" %}</h4>
-            </div>
-        </a>
-        <a href="">
-            <div class="reclom_box">
-                <img src="" alt="{% trans 'rasm topilmadi' %}" />
-                <h4>{% trans "antivirus" %}</h4>
-            </div>
-        </a>
-    </div>
+
+    {% endfor %}
+  </div>
 </section>
 
 <section class="section_antivrus">
-    <a href="{% url 'os-list' %}">
-        <h2>{% trans "Operatsion tizimlar" %}</h2>
+  <a href="{% url 'os-list' %}">
+    <h2>{% trans "Operatsion tizimlar" %}</h2>
+  </a>
+  <div class="programm_reclom">
+    {% for i in "1" %}
+    <a href="">
+      <div class="reclom_box">
+        <img src="" alt="{% trans 'rasm topilmadi' %}" />
+        <h4>{% trans "linux" %}</h4>
+      </div>
     </a>
-    <div class="programm_reclom">
-        {% for i in "1234" %}
-        <a href="">
-            <div class="reclom_box">
-                <img src="" alt="{% trans 'rasm topilmadi' %}" />
-                <h4>{% trans "linux" %}</h4>
-            </div>
-        </a>
-        {% endfor %}
-    </div>
+    {% endfor %}
+  </div>
 </section>
 
 <section class="section_antivrus">
-    <a href="{% url 'mobile-list' %}">
-        <h2>{% trans "Kerakli dasturlar" %}</h2>
+  <a href="{% url 'mobile-list' %}">
+    <h2>{% trans "Kerakli dasturlar" %}</h2>
+  </a>
+  <div class="programm_reclom">
+    {% for i in "1" %}
+    <a href="">
+      <div class="reclom_box">
+        <img src="" alt="{% trans 'rasm topilmadi' %}" />
+        <h4>{% trans "linux" %}</h4>
+      </div>
     </a>
-    <div class="programm_reclom">
-        {% for i in "1234" %}
-        <a href="">
-            <div class="reclom_box">
-                <img src="" alt="{% trans 'rasm topilmadi' %}" />
-                <h4>{% trans "linux" %}</h4>
-            </div>
-        </a>
-        {% endfor %}
-    </div>
+    {% endfor %}
+  </div>
 </section>
 {% endblock content %}

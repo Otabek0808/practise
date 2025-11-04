@@ -1,48 +1,3 @@
-.carousel {
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  max-width: 1200px;
-  margin-top: 70px;
-}
-
-.carousel-item {
-  width: 1200px;
-  height: 700px;
-  border-radius: 15px;
-}
-.item {
-  width: 100%;
-  height: 100px;
-  backdrop-filter: blur(200px);
-  background-color: rgba(14, 13, 14, 0.1);
-  box-sizing: 0 200px 200px 0 red;
-  border-radius: 0 0 15px 15px;
-  margin-top: 600px;
-}
-.item h3 {
-  color: aqua;
-  font-size: 48px;
-  text-align: center;
-}
-.welcom_box {
-  background: url("../../img/decaratsion_img/a_futuristic_repre_image_.jpg");
-  background-size: cover; /* Rasmni to'liq qoplash */
-  background-repeat: no-repeat; /* Rasmni takrorlamaslik */
-  background-position: center;
-}
-.os_box {
-  background: url(../../img/decaratsion_img/an_artistic_repres_image_.jpg);
-  background-size: cover; /* Rasmni to'liq qoplash */
-  background-repeat: no-repeat; /* Rasmni takrorlamaslik */
-  background-position: center;
-}
-.anti_box {
-  background: url(../../img/decaratsion_img/anvirus_img.jpg);
-  background-size: cover; /* Rasmni to'liq qoplash */
-  background-repeat: no-repeat; /* Rasmni takrorlamaslik */
-  background-position: center;
-}
 .section_antivrus {
   width: 100%;
   max-width: 1200px;
@@ -75,10 +30,10 @@
 
 a .reclom_box {
   width: 280px;
-  height: 450px;
+  height: auto;
   border-radius: 15px;
   background: blue;
-  padding: 6px;
+  padding-bottom: 6px;
   backdrop-filter: blur(200px);
   background-color: rgba(14, 13, 14, 0.1);
   box-sizing: 0 200px 200px 0 red;
@@ -88,4 +43,15 @@ a .reclom_box {
 }
 a .reclom_box:hover {
   transform: scale(1.05);
+}
+.reclom_box img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+.reclom_box h4 {
+  font-size: 18px;
+  color: aliceblue;
+  margin-top: 7px;
+  margin-left: 5px;
 }
