@@ -74,19 +74,19 @@ a .reclom_box:hover {
 
 .container_list ul li a {
   color: azure;
+  font-size: 64px;
 }
 .container_list ul li {
   box-shadow: 0 0 3px rgba(149, 240, 248, 0.7); /* Nur effekti */
   border-radius: 10px;
   border-radius: 10px;
 }
-.container_list ul li:hover {
-  box-shadow: 0 0 10px rgba(149, 240, 248, 0.7);
-  cursor: pointer;
-}
+
 .container_list p {
   width: 1110px;
   height: auto;
   margin: 0 auto;
   color: azure;
+}
+#searchList {
 }

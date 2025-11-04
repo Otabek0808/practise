@@ -91,3 +91,13 @@ function toggleSearchList() {
     searchList.style.display = "none";
   }
 }
+
+// Tashqariga bosilganda searchList'ni yashirish
+document.addEventListener("click", function (event) {
+  const searchInput = document.getElementById("searchInput");
+  const searchList = document.getElementById("searchList");
+
+  if (!searchList.contains(event.target) && event.target !== searchInput) {
+    searchList.style.display = "none";
+  }
+});

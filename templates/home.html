@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="../static/css/style.css" />
 <div class="container_list" id="searchList">
   {% if programs %}
-  <ul>
+  <ul id="ulsearchList">
     {% for p in programs %}
     <li>
       {% if p.category == 'antivirus' %}
