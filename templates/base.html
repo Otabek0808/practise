@@ -90,15 +90,13 @@
 
         <!-- 🔍 Qidiruv -->
         <form method="get" class="seraich">
-
-
           <input
             type="text"
             name="q"
             placeholder="{% trans 'Qidiruv...' %}"
             value="{{ request.GET.q }}"
+            id="searchInput"
           />
-
         </form>
         <!-- 🌐 Til tanlash formasi -->
           <form action="{% url 'set_language' %}" method="post" class="d-inline-block ms-3">

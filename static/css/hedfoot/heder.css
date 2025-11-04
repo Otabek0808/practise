@@ -104,9 +104,7 @@ header section nav ul li a:hover::after {
   color: rgb(219, 236, 236);
   transition: border-color 0.3s ease;
   transition: opacity 0.5s ease;
-  opacity: 0;
   margin-left: 10px;
-  display: none;
 }
 .seraich input::placeholder {
   font-size: 18px;
@@ -122,17 +120,6 @@ header section nav ul li a:hover::after {
   color: rgb(219, 236, 236);
 }
 
-.seraich svg {
-  width: 28px;
-  height: auto;
-  cursor: pointer;
-  color: #fff;
-
-  box-sizing: 1px 20px 20px 1px rgb(255, 255, 255);
-}
-.seraich svg::after {
-  display: none;
-}
 /* til kritish */
 
 .d-inline-block select {

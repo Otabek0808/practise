@@ -45,29 +45,32 @@ window.addEventListener("click", (e) => {
 
 const searchInput = document.getElementById("searchInput");
 const searchList = document.getElementById("searchList");
-const searchBack = document.getElementById("searchBack");
 
 // Dastlabki holatda searchList ni yashirish
 searchList.style.display = "none";
-searchBack.style.display = "none";
 
 // Inputga harf kiritilganda
 searchInput.addEventListener("input", function () {
   // Agar inputda biror narsa bo'lsa, searchList'ni ko'rsat
   if (searchInput.value.trim() !== "") {
     searchList.style.display = "block";
-    searchBack.style.display = "block";
+  } else {
+    searchList.style.display = "none"; // Bo'sh bo'lsa, yashirish
+  }
+});
+
+// Enter tugmasi bosilganda searchList'ni ko'rsatish
+searchInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    if (searchInput.value.trim() !== "") {
+      searchList.style.display = "block"; // Enter bosilganda ko'rsatish
+    }
   }
 });
 
 // Tashqariga bosilganda searchList'ni yashirish
 document.addEventListener("click", function (event) {
-  if (
-    !searchList.contains(event.target) &&
-    event.target !== searchInput &&
-    event.target !== searchBack
-  ) {
-    searchList.style.display = "none";
-    searchBack.style.display = "none"; // searchBackni ham yashirish
+  if (!searchList.contains(event.target) && event.target !== searchInput) {
+    searchList.style.display = "none"; // Tashqariga bosilganda yashirish
   }
 });
