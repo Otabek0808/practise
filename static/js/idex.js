@@ -1,16 +1,36 @@
-const selected = document.getElementById("select-selected");
-const optionsContainer = document.getElementById("select-items");
+const languageSelector = document.getElementById("languageSelector");
 
-selected.addEventListener("click", () => {
-  optionsContainer.classList.toggle("show"); // 'show' klassini qo'shish yoki olib tashlash
+// Uslublarni qo'shish
+languageSelector.style.padding = "10px";
+languageSelector.style.borderRadius = "5px";
+languageSelector.style.cursor = "pointer";
+languageSelector.style.transition = "0.3s ease"; // O'zgarish animatsiyasi
+languageSelector.style.zIndex = "99";
+languageSelector.style.border = "none";
+languageSelector.style.boxSizing = "border-box";
+languageSelector.style.boxShadow = "0 0 5px rgba(255, 255, 255, 0.7)";
+languageSelector.style.backdropFilter = "blur(30px)";
+
+// Focus va blur hodisalari
+languageSelector.addEventListener("focus", function () {
+  this.style.backgroundColor = "rgba(255, 255, 255, 0.1)"; // Tanlanganda fon rangi
+  this.style.color = "rgb(255, 255, 255)"; // Tanlanganda matn rangi
+  this.style.transition = "background-color 0.3s ease"; // Animatsiya
 });
 
-const options = optionsContainer.querySelectorAll("div");
-options.forEach((option) => {
-  option.addEventListener("click", () => {
-    selected.innerText = option.innerText;
-    optionsContainer.classList.remove("show"); // Tanlangan variantdan so'ng yopish
-  });
+languageSelector.addEventListener("blur", function () {
+  // Qaytish fon rangi
+  this.style.color = "withe"; // Qaytish matn rangi
+  this.style.transition = "background-color 0.3s ease"; // Animatsiya
+});
+
+// Hover hodisasi
+languageSelector.addEventListener("mouseover", function () {
+  this.style.boxShadow = "0 0 10px rgba(255, 255, 255, 0.7)"; // Hoverda soyali effekt
+});
+
+languageSelector.addEventListener("mouseout", function () {
+  this.style.boxShadow = "0 0 5px rgba(255, 255, 255, 0.7)"; // Hoverdan chiqganda qaytish
 });
 
 window.addEventListener("click", (e) => {
