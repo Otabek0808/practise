@@ -112,12 +112,25 @@
           />
         </form>
         <!-- 🌐 Til tanlash formasi -->
-        <form
-          action="{% url 'set_language' %}"
-          method="post"
-          class="d-inline-block ms-3"
-        >
-          <div class="custom-select">
+          <form action="{% url 'set_language' %}" method="post" class="d-inline-block ms-3">
+                        {% csrf_token %}
+                        <select name="language" onchange="this.form.submit()" class="form-select form-select-sm">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% for lang_code, lang_name in LANGUAGES %}
+                                <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+                                    {{ lang_name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+          </form>
+{#        <form#}
+{#          action="{% url 'set_language' %}"#}
+{#          method="post"#}
+{#          class="d-inline-block ms-3"#}
+{#          style="display: none"#}
+{#        >#}
+          <div class="custom-select" style="display: none !important;">
             <div id="select-selected" class="select-selected">Til</div>
             <div id="select-items" class="select-items">
               <div>Variant 1</div>
