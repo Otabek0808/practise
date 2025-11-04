@@ -134,52 +134,34 @@ header section nav ul li a:hover::after {
   display: none;
 }
 /* til kritish */
-.custom-select {
-  position: relative;
-  width: 100px;
+
+.d-inline-block select {
   text-align: center;
   margin: 0 auto;
   color: rgb(255, 255, 255);
-}
-
-.select-selected {
   backdrop-filter: blur(30px);
-  background-color: rgba(14, 13, 14, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   box-sizing: 0 200px 200px 0 red;
-  box-shadow: 0 0 5px rgba(149, 240, 248, 0.7);
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.select-items {
-  position: absolute;
-  backdrop-filter: blur(30px);
-  background-color: rgba(14, 13, 14, 0.1);
-  box-sizing: 0 200px 200px 0 red;
-  box-shadow: 0 0 5px rgba(149, 240, 248, 0.7);
-  border-radius: 3px;
-  max-height: 0; /* Dastlabki holat */
-  overflow: hidden; /* Oqib chiqishining oldini olish */
-  transition: max-height 0.3s ease; /* O'zgarish animatsiyasi */
+  transition: 0.3s ease; /* O'zgarish animatsiyasi */
   z-index: 99;
+  border: none;
+  margin-bottom: 30px;
+}
+.d-inline-block select:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+.d-inline-block option {
+  border-radius: 3px;
 }
 
-.select-items.show {
-  max-height: 200px; /* Qo'shimcha balandlikni ko'rsatish */
-}
-
-.select-items div {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.select-items div:hover {
+.d-inline-block option:hover {
   backdrop-filter: blur(30px);
   background-color: rgba(14, 13, 14, 0.1);
   box-sizing: 0 200px 200px 0;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-  border-radius: 3px;
 }
 
 .select-items div {

@@ -60,3 +60,14 @@ window.addEventListener("click", function (e) {
 });
 
 // qidiruv list
+function toggleSearchList() {
+  const searchInput = document.getElementById("searchInput");
+  const searchList = document.getElementById("searchList");
+
+  // Agar inputda biror narsa bo'lsa, searchList'ni ko'rsat
+  if (searchInput.value.trim() !== "") {
+    searchList.style.display = "block";
+  } else {
+    searchList.style.display = "none";
+  }
+}
