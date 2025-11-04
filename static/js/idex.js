@@ -41,58 +41,6 @@ window.addEventListener("click", (e) => {
 
 // qidiruv Hajm
 
-// kiyingi
-document.getElementById("lupaIcon").addEventListener("click", function () {
-  const headerBox = document.getElementById("headerBox");
-  const input = document.getElementById("searchInput");
-
-  if (headerBox.style.width === "35px" || headerBox.style.width === "") {
-    headerBox.style.width = "500px"; // Kengaytiriladigan yangi kenglik
-    input.style.display = "block"; // Inputni ko'rsatish
-    this.style.display = "none"; // Lupa ikonkasini yashirish
-    setTimeout(() => {
-      input.style.transform = "scaleX(1)"; // Inputni ko'rsatish
-      input.style.opacity = 1; // Inputni ko'rsatish
-    }, 100); // 10ms kutish
-  }
-});
-
-// Tashqariga bosilganda dastlabki holatga qaytish
-window.addEventListener("click", function (e) {
-  const headerBox = document.getElementById("headerBox");
-  const input = document.getElementById("searchInput");
-  const lupaIcon = document.getElementById("lupaIcon");
-  const searchBack = document.getElementById("searchBack"); // Yangi element
-
-  // Dastlabki holatda headerBox kengligi 35px va searchBack ko'rinmas
-  if (headerBox.style.width === "") {
-    headerBox.style.width = "35px"; // Dastlabki holat
-    searchBack.style.display = "none"; // Dastlabki holatda searchBack ko'rinmaydi
-  }
-
-  if (e.target === lupaIcon) {
-    // Lupa ikonkasi bosilganda
-    headerBox.style.width = "600px"; // Kengaytirish
-    input.style.display = "block"; // Qidiruv maydonini ko'rsatish
-    searchBack.style.display = "block"; // searchBack ko'rinadi
-    setTimeout(() => {
-      input.style.transform = "scaleX(1)"; // Qidiruv maydonini ko'rsatish
-      input.style.opacity = 1; // Qidiruv maydonini ko'rsatish
-    }, 10); // 10ms - animatsiya boshlanishi uchun
-    lupaIcon.style.display = "none"; // Lupa ikonkasini yashirish
-  } else if (e.target === searchBack) {
-    // searchBack bosilganda
-    input.style.transform = "scaleX(0)"; // Qidiruv maydonini yashirish
-    input.style.opacity = 0;
-    setTimeout(() => {
-      input.style.display = "none"; // Qidiruv maydonini ko'rinmas qilish
-      headerBox.style.width = "35px"; // Dastlabki kenglikka qaytish
-      lupaIcon.style.display = "block"; // Lupa ikonkasini ko'rsatish
-      searchBack.style.display = "none"; // searchBackni yashirish
-    }, 100); // 100ms - animatsiya davomiyligi
-  }
-});
-
 // qidiruv list
 
 const searchInput = document.getElementById("searchInput");

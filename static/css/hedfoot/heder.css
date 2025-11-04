@@ -84,7 +84,7 @@ header section nav ul li a:hover::after {
   height: 45px;
   border-radius: 20px;
   padding: 5px;
-  width: 35px;
+  width: 380px;
   max-width: 500px;
   overflow: hidden;
   transition: width 0.5s ease;
