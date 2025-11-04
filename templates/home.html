@@ -4,6 +4,7 @@
   {% if programs %}
   <ul id="ulsearchList">
     {% for p in programs %}
+    <hr />
     <li>
       {% if p.category == 'antivirus' %}
       <a href="{% url 'antivirus-detail' p.pk %}">{{ p.name }}</a>
@@ -15,9 +16,11 @@
       <a href="{% url 'mobile-detail' p.pk %}">{{ p.name }}</a>
       {% else %}
       <a href="#">{{ p.name }}</a>
+
       <!-- Boshqa kategoriyalar uchun -->
       {% endif %}
     </li>
+    <hr />
     {% endfor %}
   </ul>
   {% elif request.GET.q %}

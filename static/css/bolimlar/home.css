@@ -46,7 +46,7 @@ a .reclom_box:hover {
   box-shadow: 0 0 10px rgba(149, 240, 248, 0.7); /* Nur effekti */
 }
 .reclom_box img {
-  width: 100%;
+  width: 280px;
   height: auto;
   border-radius: 10px 10px 0 0;
 }
@@ -61,27 +61,33 @@ a .reclom_box:hover {
   height: 100vh;
   backdrop-filter: blur(30px);
   background-color: rgba(255, 255, 255, 0.1);
-  z-index: 80;
   position: absolute;
+  z-index: 100;
   margin: 0 auto;
   font-size: 18px;
+  overflow: hidden;
 }
 .container_list ul {
-  width: 1110px;
-  height: auto;
+  margin-top: 10px;
+  width: 800px;
+  height: 50vh;
   margin: 0 auto;
 }
 
 .container_list ul li a {
   color: azure;
-  font-size: 64px;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+.container_list ul li a:hover {
+  color: aqua;
 }
 .container_list ul li {
-  box-shadow: 0 0 3px rgba(149, 240, 248, 0.7); /* Nur effekti */
-  border-radius: 10px;
-  border-radius: 10px;
+  padding-left: 20px;
 }
-
+.container_list ul hr {
+  color: azure;
+}
 .container_list p {
   width: 1110px;
   height: auto;

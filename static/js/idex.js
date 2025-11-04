@@ -66,6 +66,7 @@ window.addEventListener("click", function (e) {
   // Agar bosilgan joy searchInput yoki headerBox bo'lmasa
   if (
     !headerBox.contains(e.target) &&
+    !searchList.contains(e.target) &&
     !input.contains(e.target) &&
     e.target !== lupaIcon
   ) {
@@ -97,7 +98,7 @@ document.addEventListener("click", function (event) {
   const searchInput = document.getElementById("searchInput");
   const searchList = document.getElementById("searchList");
 
-  if (!searchList.contains(event.target) && event.target !== searchInput) {
+  if (!ulsearchList.contains(event.target) && event.target !== searchInput) {
     searchList.style.display = "none";
   }
 });
