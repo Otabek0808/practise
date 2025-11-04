@@ -14,7 +14,7 @@ languageSelector.style.backdropFilter = "blur(30px)";
 // Focus va blur hodisalari
 languageSelector.addEventListener("focus", function () {
   this.style.backgroundColor = "rgba(255, 255, 255, 0.1)"; // Tanlanganda fon rangi
-  this.style.color = "rgb(255, 255, 255)"; // Tanlanganda matn rangi
+  this.style.color = "white"; // Tanlanganda matn rangi
   this.style.transition = "background-color 0.3s ease"; // Animatsiya
 });
 
