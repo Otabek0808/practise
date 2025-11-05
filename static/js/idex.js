@@ -117,3 +117,7 @@ document.addEventListener("click", function (event) {
     overlay.style.display = "none"; // Overlay'ni yashirish
   }
 });
+
+overlay.addEventListener("click", function (event) {
+  event.stopPropagation(); // Bosishni to'xtatish
+});
