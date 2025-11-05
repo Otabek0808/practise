@@ -74,3 +74,46 @@ document.addEventListener("click", function (event) {
     searchList.style.display = "none"; // Tashqariga bosilganda yashirish
   }
 });
+document.addEventListener("click", function (event) {
+  const isClickInside =
+    searchList.contains(event.target) || event.target === searchInput;
+
+  if (!isClickInside) {
+    searchList.style.display = "none"; // Tashqariga bosilganda yashirish
+  }
+});
+
+// ekran tusi seach displey block
+const overlay = document.createElement("div");
+overlay.style.position = "fixed";
+overlay.style.top = "0";
+overlay.style.left = "0";
+overlay.style.width = "100%";
+overlay.style.height = "100%";
+overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+overlay.style.display = "none"; // Dastlab yashirin
+overlay.style.zIndex = "999"; // Yuqori qatlamda ko'rsatish
+document.body.appendChild(overlay);
+
+searchInput.addEventListener("input", function () {
+  if (searchList.style.display === "block") {
+    overlay.style.display = "block"; // Overlay ko'rsatiladi
+  } else {
+    overlay.style.display = "none"; // Overlay yashirin
+  }
+});
+
+searchList.addEventListener("click", function () {
+  searchList.style.display = "block"; // Ro'yxat ko'rsatiladi
+  overlay.style.display = "block"; // Overlay ko'rsatiladi
+});
+
+document.addEventListener("click", function (event) {
+  const isClickInside =
+    searchList.contains(event.target) || event.target === searchInput;
+
+  if (!isClickInside) {
+    searchList.style.display = "none"; // Tashqariga bosilganda yashirish
+    overlay.style.display = "none"; // Overlay'ni yashirish
+  }
+});
