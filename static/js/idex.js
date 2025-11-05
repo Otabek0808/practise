@@ -96,16 +96,14 @@ overlay.style.zIndex = "999"; // Yuqori qatlamda ko'rsatish
 document.body.appendChild(overlay);
 
 searchInput.addEventListener("input", function () {
-  if (searchList.style.display === "block") {
+  if (searchInput.value) {
+    searchList.style.display = "block"; // Ro'yxat ko'rsatiladi
     overlay.style.display = "block"; // Overlay ko'rsatiladi
+    bodyScren.style.overflow = "hidden";
   } else {
+    searchList.style.display = "none"; // Ro'yxat yashirin
     overlay.style.display = "none"; // Overlay yashirin
   }
-});
-
-searchList.addEventListener("click", function () {
-  searchList.style.display = "block"; // Ro'yxat ko'rsatiladi
-  overlay.style.display = "block"; // Overlay ko'rsatiladi
 });
 
 document.addEventListener("click", function (event) {
@@ -118,6 +116,7 @@ document.addEventListener("click", function (event) {
   }
 });
 
+// Overlay ustida bosish hodisasi, hech narsa qilmaydi
 overlay.addEventListener("click", function (event) {
   event.stopPropagation(); // Bosishni to'xtatish
 });
