@@ -1,25 +1,23 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %} {{
+form.media }}
+<!-- BU YER MUHIM! TinyMCE shu orqali yuklanadi -->
 
-{% block content %}
-  {{ form.media }}  <!-- BU YER MUHIM! TinyMCE shu orqali yuklanadi -->
+<style>
+  .content {
+    width: 75%;
+    margin: 1rem auto;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+</style>
 
-  <style>
-    .content {
-      width: 75%;
-      margin: 1rem auto;
-      justify-content: center;
-      padding: 2rem;
-      border-radius: 1rem;
-    }
-  </style>
+<div class="content">
+  <h1>Yangi dastur</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form|crispy }}
+    <button class="btn btn-success ml-2" type="submit">Joylash</button>
+  </form>
+</div>
 
-  <div class="content">
-    <h1>Yangi dastur</h1>
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <button class="btn btn-success ml-2" type="submit">Joylash</button>
-    </form>
-  </div>
 {% endblock %}

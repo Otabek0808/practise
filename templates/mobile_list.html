@@ -1,19 +1,17 @@
-{% extends 'base.html' %}
-{% block content %}
-    {% for mobile in object_list %}
-        <section class="antvir_contayner">
-          <a href="{% url 'mobile-detail' mobile.pk %}">
-            <div class="box_baner">
-              <img src="{{ mobile.image.url }}" alt="no photo" />
-              <div class="baner_info">
-                <h2>{{ mobile.name }}</h2>
-                <div class="box_info">
-                  <p class="text_info">{{ mobile.summary }}...</p>
-                  <p class="no_money">Bepul</p>
-                </div>
-              </div>
-            </div>
-          </a>
-        </section>
-    {% endfor %}
-{% endblock %}
+{% extends 'base.html' %} {% block content %} {% for mobile in object_list %}
+<section class="antvir_contayner">
+  <a href="{% url 'mobile-detail' mobile.pk %}">
+    <div class="box_baner">
+      <img src="{{ mobile.image.url }}" alt="no photo" />
+      <div class="baner_info">
+        <h2>{{ mobile.name }}</h2>
+        <div class="box_info">
+          <p class="text_info">{{ mobile.summary }}...</p>
+          <p class="no_money">Bepul</p>
+        </div>
+      </div>
+    </div>
+  </a>
+</section>
+<script src="../static/js/idex.js"></script>
+{% endfor %} {% endblock %}

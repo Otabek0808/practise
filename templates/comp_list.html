@@ -1,19 +1,19 @@
-{% extends 'base.html' %}
-{% block content %}
-    {% for comp in object_list %}
-        <section class="antvir_contayner">
-          <a href="{% url 'comp-detail' comp.pk %}">
-            <div class="box_baner">
-              <img src="{{ comp.image.url }}" alt="no photo" />
-              <div class="baner_info">
-                <h2>{{ comp.name }}</h2>
-                <div class="box_info">
-{#                  <p class="text_info">{{ comp.summary }}...</p>#}
-                  <p class="no_money">Bepul</p>
-                </div>
-              </div>
-            </div>
-          </a>
-        </section>
-    {% endfor %}
-{% endblock %}
+{% extends 'base.html' %} {% block content %} {% for comp in object_list %}
+<section class="antvir_contayner">
+  <a href="{% url 'comp-detail' comp.pk %}">
+    <div class="box_baner">
+      <img src="{{ comp.image.url }}" alt="no photo" />
+      <div class="baner_info">
+        <h2>{{ comp.name }}</h2>
+        <div class="box_info">
+          {#
+          <p class="text_info">{{ comp.summary }}...</p>
+          #}
+          <p class="no_money">Bepul</p>
+        </div>
+      </div>
+    </div>
+  </a>
+</section>
+<script src="../static/js/idex.js"></script>
+{% endfor %} {% endblock %}
