@@ -59,7 +59,9 @@ a .reclom_box:hover {
 .container_list {
   width: 300px;
   height: 300px;
-  background-color: rgba(0, 0, 0, 0.548);
+
+  backdrop-filter: blur(200px);
+  background-color: rgba(164, 6, 6, 0.548);
   position: absolute;
   z-index: 100;
   margin: 0 auto;
