@@ -59,15 +59,14 @@ a .reclom_box:hover {
 .container_list {
   width: 380px;
   height: 300px;
-  backdrop-filter: blur(600px);
-  background-color: rgba(206, 200, 200, 0.548);
+  background-color: rgb(135, 222, 222);
   position: absolute;
   z-index: 100;
   margin: 0 auto;
   font-size: 18px;
   top: 80px;
   right: 150px;
-  padding: 7px;
+  padding: 10px;
   border-radius: 20px;
   margin-top: 20px;
   transition: 0.3s ease;
@@ -77,6 +76,8 @@ a .reclom_box:hover {
   height: auto;
   margin: 0 auto;
   border-radius: 10px;
+  padding: 3px;
+  background-color: rgb(194, 236, 224);
 }
 
 .container_list ul li a {
@@ -85,16 +86,16 @@ a .reclom_box:hover {
   transition: 0.3s ease;
 }
 .container_list ul li a:hover {
-  color: aqua;
+  color: rgb(121, 132, 132);
 }
 .container_list ul hr {
   color: azure;
 }
 .container_list p {
+  padding: 5px;
   width: 1110px;
   height: auto;
   margin: 0 auto;
   color: azure;
   font-size: 18px;
-  margin-left: 200px;
 }
