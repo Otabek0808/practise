@@ -117,6 +117,3 @@ document.addEventListener("click", function (event) {
 });
 
 // Overlay ustida bosish hodisasi, hech narsa qilmaydi
-overlay.addEventListener("click", function (event) {
-  event.stopPropagation(); // Bosishni to'xtatish
-});
